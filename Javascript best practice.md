@@ -1046,7 +1046,7 @@ getUser();
   
 -------------
 
-// 3. No magid numbers  
+### No magid numbers  
   
 for (let i = 0; i < 525600; i += 1) {  
   runCron();  
@@ -1061,7 +1061,7 @@ for (let i = 0; i < minutesInYear; i += 1) {
 
 -------------
 
-// 5. Avoid Mental Mapping  
+### Avoid Mental Mapping  
   
 const locations = ['Austin', 'New York', 'San Francisco'];  
 locations.forEach((l) => {  
@@ -1776,6 +1776,7 @@ Bad: setTimeout(blastOff, 86400000);
 Good:
 const MILLISECONDS_IN_A_DAY = 86400000;
 setTimeout(blastOff, MILLISECONDS_IN_A_DAY);
+
 -------------------------------------------------------
 
 2.
@@ -2492,6 +2493,6 @@ const writeChangedDataToFs = getData(db);
 
 writeChangedDataToFs();
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3MTkzNDQ0NjcsMTgwNjA4OTA0Myw1Mj
+eyJoaXN0b3J5IjpbLTE3NDI2NDA3ODcsMTgwNjA4OTA0Myw1Mj
 AxMjA0ODAsMTUyMTk3ODg4M119
 -->
