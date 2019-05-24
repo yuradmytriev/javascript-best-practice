@@ -2132,54 +2132,48 @@ if(Object.keys(labelCounts).includes(label)) {}
 #### Bad 
 
 ```js
-if(dog.weight > 40){
- buyFood('big bag');
- dog.feed();
-}
-else{
- buyFood('small bag');
- dog.feed();
+if (dog.weight > 40) {
+  buyFood('big bag');
+  dog.feed();
+} else {
+  buyFood('small bag');
+  dog.feed();
 }
 ```
 
 #### Good
 
 ```js
-if(dog.weight > 40){
- buyFood('big bag');
-}
-else{
- buyFood('small bag');
+if (dog.weight > 40) {
+  buyFood('big bag');
+} else {
+  buyFood('small bag');
 }
 
 dog.feed();
+```
 
 -------------------------------------------------------------
 
-### Long Lines:
-
-probabilityOfChordsInLabels[difficulty][chord] = probabilityOfChords (line continues...)
-
-->
-
-var chordInstances = probabilityOfChordsInLabels[difficulty][chord];
-chordInstances = probabilityOfChords ... 
-
------------------------------------------------------------------
-
 ### Inlining Function Calls
 
-function getNumberOfSongs(){
- return songs.length;
+#### Bad 
+
+```js
+function getNumberOfSongs() {
+  return songs.length;
 };
 
- var numberOfSongs = getNumberOfSongs();
- labelProbabilities[label] = labelCounts[label] / numberOfSongs;
+var numberOfSongs = getNumberOfSongs();
+labelProbabilities[label] = labelCounts[label] / numberOfSongs;
+```
 
-->
+#### Good
 
+```js
  var numberOfSongs = songs.length;
  labelProbabilities[label] = labelCounts[label] / numberOfSongs;
+```
 
 ----------------------------------------------------------------
 
@@ -2638,7 +2632,7 @@ const writeChangedDataToFs = getData(db);
 
 writeChangedDataToFs();
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQwODQzMjc1MiwtODc0MTgwODIsMTc2OD
+eyJoaXN0b3J5IjpbLTY0NjUyODE0MSwtODc0MTgwODIsMTc2OD
 k4MzQyNywtMTA2OTAwNzQ1MywxODA2MDg5MDQzLDUyMDEyMDQ4
 MCwxNTIxOTc4ODgzXX0=
 -->
