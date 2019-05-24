@@ -2445,17 +2445,23 @@ function bar( foo ) {
 if (foo) {
   console.log(foo);
 }
+```
 
 ---------------------------------------
 
 ### Add spaces inside curly braces. eslint: object-curly-spacing
 
 #### Bad 
+
+```js
 const foo = {clark: 'kent'};
+```
 
 #### Good
 
+```js
 const foo = { clark: 'kent' };
+```
 
 ---------------------------------------
 
@@ -2464,17 +2470,25 @@ const foo = { clark: 'kent' };
 Why? JavaScript does not have the concept of privacy in terms of properties or methods. Although a leading underscore is a common convention to mean “private”, in fact, these properties are fully public, and as such, are part of your public API contract. This convention might lead developers to wrongly think that a change won’t count as breaking, or that tests aren’t needed. tl;dr: if you want something to be “private”, it must not be observably present.
 
 #### Bad 
+
+```js
 this.__firstName__ = 'Panda';
 this.firstName_ = 'Panda';
 this._firstName = 'Panda';
+```
 
 #### Good
+
+```js
 this.firstName = 'Panda';
+```
 
 // good, in environments where WeakMaps are available
 // see https://kangax.github.io/compat-table/es6/#test-WeakMap
+```js
 const firstNames = new WeakMap();
 firstNames.set(this, 'Panda');
+```
 
 ---------------------------------------
 
@@ -2505,79 +2519,83 @@ $('.other-button').on('click', visitSite);
 
 #### Bad 
 
+```js
 class PerformanceReview {
-    constructor(employee) {
-        this.employee = employee;
-    }
+  constructor(employee) {
+    this.employee = employee;
+  }
 
-    lookupPeers() {
-        return db.lookup(this.employee, 'peers');
-    }
+  lookupPeers() {
+    return db.lookup(this.employee, 'peers');
+  }
 
-    lookupManager() {
-        return db.lookup(this.employee, 'manager');
-    }
+  lookupManager() {
+    return db.lookup(this.employee, 'manager');
+  }
 
-    getPeerReviews() {
-        const peers = this.lookupPeers();
-        // ...
-    }
+  getPeerReviews() {
+    const peers = this.lookupPeers();
+    // ...
+  }
 
-    perfReview() {
-        this.getPeerReviews();
-        this.getManagerReview();
-        this.getSelfReview();
-    }
+  perfReview() {
+    this.getPeerReviews();
+    this.getManagerReview();
+    this.getSelfReview();
+  }
 
-    getManagerReview() {
-        const manager = this.lookupManager();
-    }
+  getManagerReview() {
+    const manager = this.lookupManager();
+  }
 
-    getSelfReview() {
-        // ...
-    }
+  getSelfReview() {
+    // ...
+  }
 }
 
 const review = new PerformanceReview(employee);
 review.perfReview();
+```
 
 #### Good
 
+```js
 class PerformanceReview {
-    constructor(employee) {
-        this.employee = employee;
-    }
+  constructor(employee) {
+    this.employee = employee;
+  }
 
-    perfReview() {
-        this.getPeerReviews();
-        this.getManagerReview();
-        this.getSelfReview();
-    }
+  perfReview() {
+    this.getPeerReviews();
+    this.getManagerReview();
+    this.getSelfReview();
+  }
 
-    getPeerReviews() {
-        const peers = this.lookupPeers();
-        // ...
-    }
+  getPeerReviews() {
+    const peers = this.lookupPeers();
+    // ...
+  }
 
-    lookupPeers() {
-        return db.lookup(this.employee, 'peers');
-    }
+  lookupPeers() {
+    return db.lookup(this.employee, 'peers');
+  }
 
-    getManagerReview() {
-        const manager = this.lookupManager();
-    }
+  getManagerReview() {
+    const manager = this.lookupManager();
+  }
 
-    lookupManager() {
-        return db.lookup(this.employee, 'manager');
-    }
+  lookupManager() {
+    return db.lookup(this.employee, 'manager');
+  }
 
-    getSelfReview() {
-        // ...
-    }
+  getSelfReview() {
+    // ...
+  }
 }
 
 const review = new PerformanceReview(employee);
 review.perfReview();
+```
 
 -------------
 
@@ -2643,8 +2661,9 @@ tableColumns.length > 0 -> tableColumns.length
 
 ---------------------------------------------------------------
 
+#### Good
 
-        // good
+```js
         let node;
         if (this.props.columnTreeNode) {
             node = this.props.dataNode;
@@ -2653,7 +2672,7 @@ tableColumns.length > 0 -> tableColumns.length
         }
 
         const isCellSelected = node && node.state && node.state.selected;
-
+```
 
         // bad
         const isCellSelected =
@@ -2702,7 +2721,7 @@ const writeChangedDataToFs = getData(db);
 
 writeChangedDataToFs();
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQzMzAyODMwOSwtODc0MTgwODIsMTc2OD
+eyJoaXN0b3J5IjpbLTY2Nzg4NjI0NywtODc0MTgwODIsMTc2OD
 k4MzQyNywtMTA2OTAwNzQ1MywxODA2MDg5MDQzLDUyMDEyMDQ4
 MCwxNTIxOTc4ODgzXX0=
 -->
