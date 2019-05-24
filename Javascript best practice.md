@@ -2686,47 +2686,20 @@ const isCellSelected =
 
 -----------------------------------------------------
 
-columnTreeNode.userType === 'subTotal' || rowTreeNode.userType === 'subTotal'
-
 #### Bad
 
+```js
+columnTreeNode.userType === 'subTotal' || rowTreeNode.userType === 'subTotal'
+```
+
+#### Good
+
+```js
 (columnTreeNode.userType || rowTreeNode.userType) === 'subTotal';
+```
 
---------------------------------------------------------
-
-    isSubTotals({
-        rowTreeNode, userType, dataNode,
-    }) {
-        const isDataCell = (typeof rowTreeNode !== 'undefined');
-        if (isDataCell) {
-            return userType === 'subTotal';
-        }
-
-        if (!isDataCell) {
-            return dataNode.userType === 'subTotal';
-        }
-    }   
-
-
------------------------------------------------------
-
-  const db = {
-	data: 'some data',
-};
-
-const getData = (db) => {
-	const changedData = db.data + ' with some changes';
-  
-  return () => {
-  	console.log('write this data to fs ->', changedData)
-  }
-};
-
-const writeChangedDataToFs = getData(db);
-
-writeChangedDataToFs();
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1MjYyODA3NjgsLTg3NDE4MDgyLDE3Nj
-g5ODM0MjcsLTEwNjkwMDc0NTMsMTgwNjA4OTA0Myw1MjAxMjA0
-ODAsMTUyMTk3ODg4M119
+eyJoaXN0b3J5IjpbMTU3OTIzNDY3MSwtMTUyNjI4MDc2OCwtOD
+c0MTgwODIsMTc2ODk4MzQyNywtMTA2OTAwNzQ1MywxODA2MDg5
+MDQzLDUyMDEyMDQ4MCwxNTIxOTc4ODgzXX0=
 -->
