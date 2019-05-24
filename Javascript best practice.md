@@ -2061,36 +2061,49 @@ takeItem.onclick = () => {
 
 --------------------------------------------------------------  
 
+#### Bad
+
+```js
 function makeRegexParser(regex) {
-    return regex.exec;
+  return regex.exec;
 }
+
 var parseSsn = makeRegexParser(/^\d{3}-\d{2}-\d{4}$/);
 var parsePhone = makeRegexParser(/^\(\d{3}\)\d{3}-\d{4}$/);
+```
 
-/#### Good
+#### Good
 
+```js
 var parseSsn = /^\d{3}-\d{2}-\d{4}$/.exec;
-var parsePhone = /^\(\d{3}\)\d{3}-\d{4}$/.exec; 
+var parsePhone = /^\(\d{3}\)\d{3}-\d{4}$/.exec;
+```
 
 --------------------------------------------------------------
 
-// bad
-function moreThanThree(number){
-  if(number > 3){
-  return true;
-  } else {
-  return "No. The number was only " + number + ".";
-  }
-};
+#### Bad
 
-// good
-function moreThanThree(number){
-  if(number > 3){
-  return true;
+```js
+function moreThanThree(number) {
+  if (number > 3) {
+    return true;
   } else {
-  return false;
+    return "No. The number was only " + number + ".";
   }
 };
+```
+
+### Good
+
+```js
+function moreThanThree(number) {
+  if (number > 3) {
+    return true;
+  } else {
+    return false;
+  }
+};
+```
 
 
 This function returns either a boolean or a string (see Figure 5-10). This isn’t
@@ -2619,7 +2632,7 @@ const writeChangedDataToFs = getData(db);
 
 writeChangedDataToFs();
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTY2ODEyOTExMiwtODc0MTgwODIsMTc2OD
+eyJoaXN0b3J5IjpbLTQ0MjI0NDA3MSwtODc0MTgwODIsMTc2OD
 k4MzQyNywtMTA2OTAwNzQ1MywxODA2MDg5MDQzLDUyMDEyMDQ4
 MCwxNTIxOTc4ODgzXX0=
 -->
