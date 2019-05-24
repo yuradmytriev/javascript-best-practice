@@ -1670,14 +1670,15 @@ for (let i = 0; i < list.length; i++) {}
 #### Bad
 
 ```js
-const say = (word, sentence) => {  
-  if (sentence) {  
-  console.log(sentence);  
-  return;  
- }  console.log(word);  
-};  
-  
-say(null, 'sentence');  
+const say = (word, sentence) => {
+  if (sentence) {
+    console.log(sentence);
+    return;
+  }
+  console.log(word);
+};
+
+say(null, 'sentence'); 
 ```
 
 #### Good 
@@ -1707,28 +1708,31 @@ sayWord('word');
 
 ## Objects and Data Structures 
   
-// 1. Use getters and setters  
+### Use getters and setters  
   
-/*  
-Using getters and setters to access data on objects could be better than simply looking for a property on an object.  
-"Why?" you might ask. Well, here's an unorganized list of reasons why:  
-  
- When you want to do more beyond getting an object property, you don't have to look up and change every accessor in your codebase. Makes adding validation simple when doing a set. Encapsulates the internal representation. Easy to add logging and error handling when getting and setting. You can lazy load your object's properties, let's say getting it from a server.*/  
-  
-function makeBankAccount() {  
+Using getters and setters to access data on objects could be better than simply looking for a property on an object.  "Why?" you might ask. Well, here's an unorganized list of reasons why:  
+
+When you want to do more beyond getting an object property, you don't have to look up and change every accessor in your codebase. Makes adding validation simple when doing a set. Encapsulates the internal representation. Easy to add logging and error handling when getting and setting. You can lazy load your object's properties, let's say getting it from a server.
+
+#### Bad
+
+```js
+function makeBankAccount() {
   // ...  
+
+  return {
+    balance: 0,
+    // ...  
+  };
+}
+
+const account = makeBankAccount();
+account.balance = 100;
+```
   
-  return {  
-  balance: 0,  
-  // ...  
-  };  
-}  
-  
-const account = makeBankAccount();  
-account.balance = 100;  
-  
-// ->  
-  
+#### Good 
+
+```js  
 function makeBankAccount() {  
   // this one is private  
   let balance = 0;  
@@ -1750,7 +1754,8 @@ function makeBankAccount() {
   
 const account = makeBankAccount();  
 account.setBalance(100);  
-  
+```
+
 -------------
   
 ### Use method chaining  
@@ -2581,7 +2586,7 @@ const writeChangedDataToFs = getData(db);
 
 writeChangedDataToFs();
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQ4MjgzMjQ0OSwxNzY4OTgzNDI3LC0xMD
+eyJoaXN0b3J5IjpbLTU5MzkwMDQ5MCwxNzY4OTgzNDI3LC0xMD
 Y5MDA3NDUzLDE4MDYwODkwNDMsNTIwMTIwNDgwLDE1MjE5Nzg4
 ODNdfQ==
 -->
