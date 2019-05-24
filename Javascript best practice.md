@@ -1231,27 +1231,36 @@ function handleThings(opts) {
 ```
   
 #### Still bad  
-function handleThings(opts) {  
-  if (opts === void 0) {  
-  opts = {};  
- }  // ...  
-}  
+
+```js
+function handleThings(opts) {
+  if (opts === void 0) {
+    opts = {};
+  }
+} 
+```
   
 #### Good
-function handleThings(opts = {}) {  
-  // ...  
-}  
+
+```js
+function handleThings(opts = {}) {}
+```
   
 -------------
   
 ### Avoid confusing arrow function syntax (=>) with comparison operators (<=, >=). eslint: no-confusing-arrow  
   
-#### Bad 
+#### Bad
+
+```js
 const itemHeight = item => item.height > 256 ? item.largeSize : item.smallSize;  
+```
+#### Good
+
+```js  
+const itemHeight = item => (item.height > 256 ? item.largeSize : item.smallSize);
   
-// good  
-const itemHeight = item => (item.height > 256 ? item.largeSize : item.smallSize);  
-  
+```
 -------------
   
 ### Never reassign parameters. eslint: no-param-reassign  
@@ -2539,6 +2548,6 @@ const writeChangedDataToFs = getData(db);
 
 writeChangedDataToFs();
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwNjkwMDc0NTMsMTgwNjA4OTA0Myw1Mj
-AxMjA0ODAsMTUyMTk3ODg4M119
+eyJoaXN0b3J5IjpbMTY5MTgwMzE3MywtMTA2OTAwNzQ1MywxOD
+A2MDg5MDQzLDUyMDEyMDQ4MCwxNTIxOTc4ODgzXX0=
 -->
