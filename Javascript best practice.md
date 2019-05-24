@@ -1036,7 +1036,7 @@ const yearsMonthDay = moment.format('YYYY/MM/DD');
   
 -------------
   
-// 2. Remove obvious data  
+### Remove obvious data  
   
 getUserData();  
   
@@ -1044,7 +1044,7 @@ getUserData();
   
 getUser();  
   
-/*----------------------------------------------*/
+-------------
 
 // 3. No magid numbers  
   
@@ -1058,6 +1058,8 @@ const minutesInYear = 525600;
 for (let i = 0; i < minutesInYear; i += 1) {  
   runCron();  
 }
+
+-------------
 
 // 5. Avoid Mental Mapping  
   
@@ -1079,6 +1081,7 @@ locations.forEach((location) => {
  // ... // ...  dispatch(location);  
 });
 
+-------------
   
 // 6. Don't add unneeded context  
   
@@ -1138,7 +1141,7 @@ if (currentUser) {
   console.log('Yup.');  
  };}  
   
-/*----------------------------------------------*/  
+-------------
   
 // 2. Never name a parameter arguments. This will take precedence over the arguments object that is given to every function scope.  
   
@@ -1152,7 +1155,7 @@ function foo(name, options, args) {
   // ...  
 }  
   
-/*----------------------------------------------*/  
+-------------
   
 // 3. Never use arguments, opt to use rest syntax ... instead. eslint: prefer-rest-params  
   
@@ -1169,7 +1172,7 @@ function concatenateAll(...args) {
   return args.join('');  
 }  
   
-/*----------------------------------------------*/  
+-------------
   
 // 4. Use default parameter syntax rather than mutating function arguments.  
   
@@ -1192,7 +1195,7 @@ function handleThings(opts = {}) {
   // ...  
 }  
   
-/*----------------------------------------------*/  
+-------------
   
 // 5 Avoid confusing arrow function syntax (=>) with comparison operators (<=, >=). eslint: no-confusing-arrow  
   
@@ -1202,7 +1205,7 @@ const itemHeight = item => item.height > 256 ? item.largeSize : item.smallSize;
 // good  
 const itemHeight = item => (item.height > 256 ? item.largeSize : item.smallSize);  
   
-/*----------------------------------------------*/  
+-------------
   
 // 6. Never reassign parameters. eslint: no-param-reassign  
   
@@ -1229,7 +1232,7 @@ function f4(a = 1) {
   // ...  
 }  
   
-/*-------------------------------------------------------*/  
+-------------
   
 // 7. Never mutate parameters. eslint: no-param-reassign  
   
@@ -1245,7 +1248,7 @@ function f2(obj) {
   const key = Object.prototype.hasOwnProperty.call(obj, 'key') ? obj.key : 1;  
 }  
   
-/*----------------------------------------------*/  
+-------------
   
 // 8. Never use the Function constructor to create a new function. eslint: no-new-func  
   
@@ -1255,9 +1258,11 @@ function f2(obj) {
 var add = new Function('a', 'b', 'return a + b');  
   
 // still bad  
-var subtract = Function('a', 'b', 'return a - b');  
-  
-/*------------------- Functions ---------------------*/  
+var subtract = Function('a', 'b', 'return a - b'); 
+ 
+-------------
+
+## Functions  
   
 // 1. Function arguments (2 or fewer ideally)  
   
@@ -1271,7 +1276,7 @@ function createMenu({ title, body, buttonText, cancellable }) {
   // ...  
 }  
   
-/*----------------------------------------------*/  
+-------------
   
 // 2. Functions should do one thing  
   
@@ -1295,7 +1300,7 @@ function isActiveClient(client) {
   return clientRecord.isActive();  
 }  
   
-/*----------------------------------------------*/  
+------------- 
   
 // 3. Function names should say what they do  
   
@@ -1317,7 +1322,7 @@ function addMonthToDate(month, date) {
 const date = new Date();  
 addMonthToDate(1, date);  
   
-/*----------------------------------------------*/  
+-------------
   
 // 4. Set default objects with Object.assign  
   
@@ -1359,7 +1364,7 @@ function createMenu(config) {
   
 createMenu(menuConfig);  
   
-/*----------------------------------------------*/  
+-------------
   
 // 5. Don't use flags as function parameters  
   
@@ -1385,7 +1390,7 @@ function createTempFile(name) {
   createFile(`./temp/${name}`);  
 }  
   
-/*----------------------------------------------*/  
+------------- 
   
 // 6. Avoid Side Effects  
   
@@ -2491,6 +2496,6 @@ const writeChangedDataToFs = getData(db);
 
 writeChangedDataToFs();
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1Njk0MTI4NTIsMTgwNjA4OTA0Myw1Mj
+eyJoaXN0b3J5IjpbLTE0Mjk2MDQ0NzIsMTgwNjA4OTA0Myw1Mj
 AxMjA0ODAsMTUyMTk3ODg4M119
 -->
