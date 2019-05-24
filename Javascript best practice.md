@@ -1880,10 +1880,12 @@ class Employee {
   
 ### A fast half sum:  
   
+```js
 const hight = 555555555;  
 const low = 222222222;  
 const big = Math.floor((hight + low) / 2);  
 const mid = Math.floor(low + ((hight - low) / 2)); // it`s better
+```
 
 ---------------
 
@@ -1898,6 +1900,7 @@ setTimeout(blastOff, 86400000);
 ```js
 const MILLISECONDS_IN_A_DAY = 86400000;
 setTimeout(blastOff, MILLISECONDS_IN_A_DAY);
+```
 
 -------------------------------------------------------
 
@@ -1969,34 +1972,46 @@ function createTempFile(name) {
 
 Доступ к пере­менной doc выполняется быстрее, чем к переменной document, потому что она является локальной переменной
 
+#### Bad
+
+```js
 document.getElementById("go-btn")
+```
 
-->
+#### Good
 
+```js
 var doc = document;
 doc.getElementByld('go-btn')
+```
 
 --------------------------------------------------------------
 
 ### Mark optional parameters via the parameter default value `undefined`
 
+```js
 function foo(optional = undefined) { ··· }
+```
 
 --------------------------------------------------------------
 
 ### Mark required parameters via a function that throws an exception
 
+```js
 function foo(required = throwException()) { ··· }
+```
 
 --------------------------------------------------------------
 
 ### Enforcing a maximum arity (variant 1 of 2)
 
+```js
   function f(x, y, ...empty) { // max arity: 2
       if (empty.length > 0) {
           throw new Error();
       }
   }
+```
 
 --------------------------------------------------------------
 
@@ -2609,7 +2624,7 @@ const writeChangedDataToFs = getData(db);
 
 writeChangedDataToFs();
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTg5ODM1NDQ5NiwxNzY4OTgzNDI3LC0xMD
-Y5MDA3NDUzLDE4MDYwODkwNDMsNTIwMTIwNDgwLDE1MjE5Nzg4
-ODNdfQ==
+eyJoaXN0b3J5IjpbLTE1ODU5NjExNjcsMTc2ODk4MzQyNywtMT
+A2OTAwNzQ1MywxODA2MDg5MDQzLDUyMDEyMDQ4MCwxNTIxOTc4
+ODgzXX0=
 -->
