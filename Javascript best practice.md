@@ -1386,8 +1386,7 @@ function isActiveClient(client) {
 #### Bad
  
 ```js
-function addToDate(date, month) {  
-  // ...}  
+function addToDate(date, month) {}  
   
 const date = new Date();  
   
@@ -1396,13 +1395,13 @@ addToDate(date, 1);
 ```
 
 #### Good
-  
-function addMonthToDate(month, date) {  
-  // ...  
-}  
+
+```js
+function addMonthToDate(month, date) {}  
   
 const date = new Date();  
 addMonthToDate(1, date);  
+```
   
 -------------
   
@@ -1410,6 +1409,7 @@ addMonthToDate(1, date);
 
 #### Bad
 
+```js
 const menuConfig = {  
   title: null,  
   body: 'Bar',  
@@ -1425,9 +1425,11 @@ function createMenu(config) {
 }  
   
 createMenu(menuConfig);  
+```
   
 #### Good
-  
+
+```js
 const menuConfig = {  
   title: 'Order',  
   // User did not include 'body' key  
@@ -1447,6 +1449,7 @@ function createMenu(config) {
  // ...}  
   
 createMenu(menuConfig);  
+```
   
 -------------
   
@@ -1459,15 +1462,18 @@ createMenu(menuConfig);
 
 #### Bad
 
+```js
 function createFile(name, temp) {  
   if (temp) {  
   fs.create(`./temp/${name}`);  
  } else {  
   fs.create(name);  
  }}  
+```
   
 #### Good
   
+```js
 function createFile(name) {  
   fs.create(name);  
 }  
@@ -1475,6 +1481,7 @@ function createFile(name) {
 function createTempFile(name) {  
   createFile(`./temp/${name}`);  
 }  
+```
   
 ------------- 
   
@@ -2567,6 +2574,6 @@ const writeChangedDataToFs = getData(db);
 
 writeChangedDataToFs();
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0OTkwNDA3NjYsLTEwNjkwMDc0NTMsMT
-gwNjA4OTA0Myw1MjAxMjA0ODAsMTUyMTk3ODg4M119
+eyJoaXN0b3J5IjpbMTc2ODk4MzQyNywtMTA2OTAwNzQ1MywxOD
+A2MDg5MDQzLDUyMDEyMDQ4MCwxNTIxOTc4ODgzXX0=
 -->
