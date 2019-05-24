@@ -1140,8 +1140,7 @@ function paintCar(car) {
 
 ```js
 function createMicrobrewery(name) {  
-  const breweryName = name || 'Hipster Brew Co.';  
-  // ...  
+  const breweryName = name || 'Hipster Brew Co.';
 }
 ```
   
@@ -1157,13 +1156,14 @@ function createMicrobrewery(name = 'Hipster Brew Co.') {}
 
 ### Note: ECMA-262 defines a block as a list of statements. A function declaration is not a statement.  
   
-// bad  
+#### Bad
+
 if (currentUser) {  
   function test() {  
   console.log('Nope.');  
  }}  
   
-// good  
+#### Good
 let test;  
 if (currentUser) {  
   test = () => {  
@@ -1174,12 +1174,13 @@ if (currentUser) {
   
 ### Never name a parameter arguments. This will take precedence over the arguments object that is given to every function scope.  
   
-// bad  
+#### Bad
+
 function foo(name, options, arguments) {  
   // ...  
 }  
   
-// good  
+#### Good
 function foo(name, options, args) {  
   // ...  
 }  
@@ -1190,13 +1191,14 @@ function foo(name, options, args) {
   
 // Why? ... is explicit about which arguments you want pulled. Plus, rest arguments are a real Array, and not merely Array-like like arguments.  
   
-// bad  
+#### Bad
+
 function concatenateAll() {  
   const args = Array.prototype.slice.call(arguments);  
   return args.join('');  
 }  
   
-// good  
+#### Good
 function concatenateAll(...args) {  
   return args.join('');  
 }  
@@ -1219,7 +1221,7 @@ function handleThings(opts) {
  }  // ...  
 }  
   
-// good  
+#### Good
 function handleThings(opts = {}) {  
   // ...  
 }  
@@ -1251,7 +1253,8 @@ function f2(a) {
   // ...  
 }  
   
-// good  
+#### Good
+
 function f3(a) {  
   const b = a || 1;  
   // ...  
@@ -1272,7 +1275,8 @@ function f1(obj) {
   obj.key = 1;  
 }  
   
-// good  
+#### Good 
+
 function f2(obj) {  
   const key = Object.prototype.hasOwnProperty.call(obj, 'key') ? obj.key : 1;  
 }  
@@ -1299,7 +1303,7 @@ function createMenu(title, body, buttonText, cancellable) {
   // ...  
 }  
   
-// ->  
+#### Good
   
 function createMenu({ title, body, buttonText, cancellable }) {  
   // ...  
@@ -1316,7 +1320,7 @@ function emailClients(clients) {
   email(client);  
  } });}  
   
-// ->  
+#### Good
   
 function emailActiveClients(clients) {  
   clients  
@@ -1342,7 +1346,7 @@ const date = new Date();
 // It's hard to tell from the function name what is added  
 addToDate(date, 1);  
   
-// ->  
+#### Good
   
 function addMonthToDate(month, date) {  
   // ...  
@@ -1371,7 +1375,7 @@ function createMenu(config) {
   
 createMenu(menuConfig);  
   
-// ->  
+#### Good
   
 const menuConfig = {  
   title: 'Order',  
@@ -1409,7 +1413,7 @@ function createFile(name, temp) {
   fs.create(name);  
  }}  
   
-// ->  
+#### Good
   
 function createFile(name) {  
   fs.create(name);  
@@ -1435,7 +1439,7 @@ splitIntoFirstAndLastName();
   
 console.log(name); // ['Ryan', 'McDermott'];  
   
-// ->  
+#### Good
   
 function splitIntoFirstAndLastName(name) {  
   return name.split(' ');  
@@ -1455,7 +1459,7 @@ const addItemToCart = (cart, item) => {
   cart.push({ item, date: Date.now() });  
 };  
   
-// ->  
+#### Good
   
 const addItemToCart = (cart, item) => {  
   return [...cart, { item, date: Date.now() }];  
@@ -1470,7 +1474,7 @@ Array.prototype.diff = function diff(comparisonArray) {
   return this.filter(elem => !hash.has(elem));  
 };  
   
-// ->  
+#### Good
   
 class SuperArray extends Array {  
   diff(comparisonArray) {  
@@ -2501,6 +2505,6 @@ const writeChangedDataToFs = getData(db);
 
 writeChangedDataToFs();
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTYyNDQ5MTg3MCwxODA2MDg5MDQzLDUyMD
-EyMDQ4MCwxNTIxOTc4ODgzXX0=
+eyJoaXN0b3J5IjpbMzMxNjI0MjU0LDE4MDYwODkwNDMsNTIwMT
+IwNDgwLDE1MjE5Nzg4ODNdfQ==
 -->
