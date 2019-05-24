@@ -1612,21 +1612,27 @@ if (isDOMNodePresent(node)) {}
   a previous clean code concept we learned: a function should only do one thing.  
  When you have classes and functions that have if statements, you are telling your user that your  function does more than one thing. Remember, just do one thing.  
 */  
-  
-class Airplane {  
-  // ...  
-  getCruisingAltitude() {  
-  switch (this.type) {  
-  case '777':  
-  return this.getMaxAltitude() - this.getPassengerCount();  
-  case 'Air Force One':  
-  return this.getMaxAltitude();  
-  case 'Cessna':  
-  return this.getMaxAltitude() - this.getFuelExpenditure();  
- } }}  
-  
-// ->  
-  
+
+#### Bad
+ 
+```js
+class Airplane {
+  getCruisingAltitude() {
+    switch (this.type) {
+      case '777':
+        return this.getMaxAltitude() - this.getPassengerCount();
+      case 'Air Force One':
+        return this.getMaxAltitude();
+      case 'Cessna':
+        return this.getMaxAltitude() - this.getFuelExpenditure();
+    }
+  }
+} 
+```
+
+#### Good 
+
+```js
 class Airplane {  
   // ...  
 }  
@@ -2584,7 +2590,7 @@ const writeChangedDataToFs = getData(db);
 
 writeChangedDataToFs();
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTEzMTE5NTY3LDE3Njg5ODM0MjcsLTEwNj
+eyJoaXN0b3J5IjpbNzM1NDY1NjcwLDE3Njg5ODM0MjcsLTEwNj
 kwMDc0NTMsMTgwNjA4OTA0Myw1MjAxMjA0ODAsMTUyMTk3ODg4
 M119
 -->
