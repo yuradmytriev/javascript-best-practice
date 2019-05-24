@@ -1544,19 +1544,22 @@ const addItemToCart = (cart, item) => {
 #### Bad
 
 ```js
-Array.prototype.diff = function diff(comparisonArray) {  
-  const hash = new Set(comparisonArray);  
-  return this.filter(elem => !hash.has(elem));  
-};  
+Array.prototype.diff = function diff(comparisonArray) {
+  const hash = new Set(comparisonArray);
+  return this.filter(elem => !hash.has(elem));
+}; 
 ```
   
 #### Good
-  
-class SuperArray extends Array {  
-  diff(comparisonArray) {  
-  const hash = new Set(comparisonArray);  
-  return this.filter(elem => !hash.has(elem));  
- }}  
+
+```js
+class SuperArray extends Array {
+  diff(comparisonArray) {
+    const hash = new Set(comparisonArray);
+    return this.filter(elem => !hash.has(elem));
+  }
+}
+```
   
 -------------
   
@@ -1564,19 +1567,19 @@ class SuperArray extends Array {
 
 #### Bad
 
-if (fsm.state === 'fetching' && isEmpty(listNode)) {  
-  // ...  
-}  
+```js
+if (fsm.state === 'fetching' && isEmpty(listNode)) {}  
+```
   
 #### Good 
-  
+
+```js
 function shouldShowSpinner(fsm, listNode) {  
   return fsm.state === 'fetching' && isEmpty(listNode);  
 }  
   
-if (shouldShowSpinner(fsmInstance, listNodeInstance)) {  
-  // ...  
-}  
+if (shouldShowSpinner(fsmInstance, listNodeInstance)) {}  
+```
   
 -------------
   
@@ -1584,23 +1587,19 @@ if (shouldShowSpinner(fsmInstance, listNodeInstance)) {
 
 #### Bad
 
-function isDOMNodeNotPresent(node) {  
-  // ...  
-}  
+```js
+function isDOMNodeNotPresent(node) {}  
   
-if (!isDOMNodeNotPresent(node)) {  
-  // ...  
-}  
+if (!isDOMNodeNotPresent(node)) {}  
+```
   
 #### Good
   
-function isDOMNodePresent(node) {  
-  // ...  
-}  
-  
-if (isDOMNodePresent(node)) {  
-  // ...  
-}  
+```js
+function isDOMNodePresent(node) {}  
+
+if (isDOMNodePresent(node)) {}  
+```
   
 -------------
   
@@ -2585,7 +2584,7 @@ const writeChangedDataToFs = getData(db);
 
 writeChangedDataToFs();
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTM4NTMwMTk0LDE3Njg5ODM0MjcsLTEwNj
+eyJoaXN0b3J5IjpbNTEzMTE5NTY3LDE3Njg5ODM0MjcsLTEwNj
 kwMDc0NTMsMTgwNjA4OTA0Myw1MjAxMjA0ODAsMTUyMTk3ODg4
 M119
 -->
