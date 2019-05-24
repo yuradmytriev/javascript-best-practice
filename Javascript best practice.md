@@ -949,20 +949,23 @@ saveCityZipCode(city, zipCode);
   
 #### Array Alternative: Sets  
   
-// So with a set instead of an array, we can turn this code:  
-  
+#### Bad
+
 ```js  
-var allChords = []; //this is outside the train function  
-// this is inside the train function  
+var allChords = []; 
 chords.forEach(chord => {  
   if (!allChords.includes(chord)) {  
   allChords.push(chord);  
  }});  
-into this code:  
-var allChords = new Set(); // this is outside the train function  
-// this is inside the train function  
+```
+
+#### Good
+
+```js
+var allChords = new Set();
+ 
 chords.forEach(chord => allChords.add(chord));
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTkxMjQzODkzMCwxNTIxOTc4ODgzXX0=
+eyJoaXN0b3J5IjpbNTIwMTIwNDgwLDE1MjE5Nzg4ODNdfQ==
 -->
