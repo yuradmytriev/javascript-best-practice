@@ -2676,16 +2676,19 @@ const isCellSelected = node && node.state && node.state.selected;
 
 ```
 
- №bad
-        const isCellSelected =
-            (this.props.treeNode && this.props.treeNode.state && this.props.treeNode.state.selected) ||
-            (this.props.dataNode && this.props.dataNode.state && this.props.dataNode.state.selected);
+#### Bad
+
+```js
+const isCellSelected =
+  (this.props.treeNode && this.props.treeNode.state && this.props.treeNode.state.selected) ||
+  (this.props.dataNode && this.props.dataNode.state && this.props.dataNode.state.selected);
+```            
 
 -----------------------------------------------------
 
 columnTreeNode.userType === 'subTotal' || rowTreeNode.userType === 'subTotal'
 
-->
+#### Bad
 
 (columnTreeNode.userType || rowTreeNode.userType) === 'subTotal';
 
@@ -2723,7 +2726,7 @@ const writeChangedDataToFs = getData(db);
 
 writeChangedDataToFs();
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQ2MTYxNTc3NSwtODc0MTgwODIsMTc2OD
-k4MzQyNywtMTA2OTAwNzQ1MywxODA2MDg5MDQzLDUyMDEyMDQ4
-MCwxNTIxOTc4ODgzXX0=
+eyJoaXN0b3J5IjpbLTE1MjYyODA3NjgsLTg3NDE4MDgyLDE3Nj
+g5ODM0MjcsLTEwNjkwMDc0NTMsMTgwNjA4OTA0Myw1MjAxMjA0
+ODAsMTUyMTk3ODg4M119
 -->
