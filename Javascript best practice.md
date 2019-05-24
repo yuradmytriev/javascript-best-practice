@@ -1862,8 +1862,7 @@ class EmployeeTaxData {
   constructor(ssn, salary) {
     this.ssn = ssn;
     this.salary = salary;
-  }
-  // ...  
+  } 
 }
 
 class Employee {
@@ -1873,9 +1872,8 @@ class Employee {
   }
   setTaxData(ssn, salary) {
     this.taxData = new EmployeeTaxData(ssn, salary);
-  } // ...  
-}
- 
+  }  
+} 
 ```
 
 -------------
@@ -1917,15 +1915,11 @@ if (shouldShowSpinner(fsmInstance, listNodeInstance)) {}
 
 --------------------------------------------------------------
 
-6. Function must do one thing
+### Don't use flags as function parameters
 
---------------------------------------------------------------
+#### Bad
 
-7. Don't use flags as function parameters
---------------------------------------------------------------
-
-Bad:
-
+```js
 function createFile(name, temp) {
   if (temp) {
     fs.create(`./temp/${name}`);
@@ -1933,11 +1927,11 @@ function createFile(name, temp) {
     fs.create(name);
   }
 }
+```
 
-->
+#### Good
 
-Good:
-
+```js
 function createFile(name) {
   fs.create(name);
 }
@@ -1945,10 +1939,11 @@ function createFile(name) {
 function createTempFile(name) {
   createFile(`./temp/${name}`);
 }
+```
 
 --------------------------------------------------------------
 
-8. Неплохо было бы взять за правило сохранять внешние значения в локальных переменных:
+### Неплохо было бы взять за правило сохранять внешние значения в локальных переменных:
 
 Доступ к пере­менной doc выполняется быстрее, чем к переменной document, потому что она является локальной переменной
 
@@ -2592,7 +2587,7 @@ const writeChangedDataToFs = getData(db);
 
 writeChangedDataToFs();
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjA3OTExMjAyOCwxNzY4OTgzNDI3LC0xMD
-Y5MDA3NDUzLDE4MDYwODkwNDMsNTIwMTIwNDgwLDE1MjE5Nzg4
-ODNdfQ==
+eyJoaXN0b3J5IjpbLTIwODQzNDQ4NzYsMTc2ODk4MzQyNywtMT
+A2OTAwNzQ1MywxODA2MDg5MDQzLDUyMDEyMDQ4MCwxNTIxOTc4
+ODgzXX0=
 -->
