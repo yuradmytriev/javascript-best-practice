@@ -2595,27 +2595,6 @@ review.perfReview();
 
 -------------
 
-### User input should be limited
-
-/* 
-Users can potentially input an unlimited amount of data to send to you. It's important to set limits 
-if a function takes any kind of user data in.
-*/
-
-router.route('/message').post((req, res) => {
-    const message = req.body.content;
-
-    // What happens if the message is many megabytes of data? Do we want to store
-    // that in the database? We should set limits on the size.
-    db.save(message);
-});
-
--------------
-
-
-
--------------
-
 #### Bad
 
 ```js
@@ -2668,7 +2647,7 @@ columnTreeNode.userType === 'subTotal' || rowTreeNode.userType === 'subTotal'
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwNDY2NTMsLTE1MjYyODA3NjgsLTg3ND
-E4MDgyLDE3Njg5ODM0MjcsLTEwNjkwMDc0NTMsMTgwNjA4OTA0
-Myw1MjAxMjA0ODAsMTUyMTk3ODg4M119
+eyJoaXN0b3J5IjpbMTg3MDY4NTUxMSwtMTUyNjI4MDc2OCwtOD
+c0MTgwODIsMTc2ODk4MzQyNywtMTA2OTAwNzQ1MywxODA2MDg5
+MDQzLDUyMDEyMDQ4MCwxNTIxOTc4ODgzXX0=
 -->
