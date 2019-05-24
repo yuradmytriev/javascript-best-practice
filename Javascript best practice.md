@@ -2284,14 +2284,18 @@ import { named1, named2 } from 'foo';
 
 #### Good
 
+```js
 import foo, { named1, named2 } from 'foo';
+```
 
 #### Good
 
+```js
 import foo, {
   named1,
   named2,
 } from 'foo';
+```
 
 ------------------------------------------------------------------
 
@@ -2300,11 +2304,16 @@ import foo, {
 Why? To encourage more files that only ever export one thing, which is better for readability and maintainability.
 
 #### Bad 
+
+```js
 export function foo() {}
+```
 
 #### Good
 
+```js
 export default function foo() {}
+```
 
 ---------------------------------------------
 
@@ -2313,10 +2322,14 @@ export default function foo() {}
 Why? The curly braces follow the same indentation rules as every other curly brace block in the style guide, as do the trailing commas.
 
 #### Bad 
+
+```js
 import {longNameA, longNameB, longNameC, longNameD, longNameE} from 'path';
+```
 
 #### Good
 
+```js
 import {
   longNameA,
   longNameB,
@@ -2324,6 +2337,7 @@ import {
   longNameD,
   longNameE,
 } from 'path';
+```
 
 ---------------------------------------------
 
@@ -2332,21 +2346,29 @@ import {
 Why? It’s easier to add new variable declarations this way, and you never have to worry about swapping out a ; for a , or introducing punctuation-only diffs. You can also step through each declaration with the debugger, instead of jumping through all of them at once.
 
 #### Bad 
+
+```js
 const items = getItems(),
     goSportsTeam = true,
     dragonball = 'z';
+```
 
 #### Bad 
+
+```js
 // (compare to above, and try to spot the mistake)
 const items = getItems(),
     goSportsTeam = true;
     dragonball = 'z';
+```
 
 #### Good
 
+```js
 const items = getItems();
 const goSportsTeam = true;
 const dragonball = 'z';
+```
 
 ---------------------------------------------
 
@@ -2364,15 +2386,20 @@ also cause unexpected behavior in your programs.
 ### Avoid unneeded ternary statements. eslint: no-unneeded-ternary
 
 #### Bad 
+
+```js
 const foo = a ? a : b;
 const bar = c ? true : false;
 const baz = c ? false : true;
+```
 
 #### Good
 
+```js
 const foo = a || b;
 const bar = !!c;
 const baz = !c;
+```
 
 --------------------------------------------------
 
@@ -2383,29 +2410,38 @@ const baz = !c;
 ### Do not pad your blocks with blank lines. eslint: padded-blocks
 
 #### Bad 
+
+```js
 function bar() {
 
   console.log(foo);
 
 }
+```
 
 #### Good
 
+```js
 function bar() {
   console.log(foo);
 }
+```
 
 ---------------------------------------
 
 ### Do not add spaces inside parentheses. eslint: space-in-parens
 
 #### Bad 
+
+```js
 function bar( foo ) {
   return foo;
 }
+```
 
 #### Good
 
+```js
 if (foo) {
   console.log(foo);
 }
@@ -2666,7 +2702,7 @@ const writeChangedDataToFs = getData(db);
 
 writeChangedDataToFs();
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTcyMDM0NjAwLC04NzQxODA4MiwxNzY4OT
-gzNDI3LC0xMDY5MDA3NDUzLDE4MDYwODkwNDMsNTIwMTIwNDgw
-LDE1MjE5Nzg4ODNdfQ==
+eyJoaXN0b3J5IjpbMTQzMzAyODMwOSwtODc0MTgwODIsMTc2OD
+k4MzQyNywtMTA2OTAwNzQ1MywxODA2MDg5MDQzLDUyMDEyMDQ4
+MCwxNTIxOTc4ODgzXX0=
 -->
