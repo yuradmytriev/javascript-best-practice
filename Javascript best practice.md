@@ -2038,31 +2038,28 @@ const hasEitherClass = (element, classNamel, className2) => {
 ### refactoring
 
 #### Bad
-  const getItem = () => {
-    const item = myStorage.getItem('customKey');
-    console.log(item);
-  };
 
-  takeItem.onclick = () => getItem();
+```js
+const getItem = () => {
+  const item = myStorage.getItem('customKey');
+  console.log(item);
+};
 
-  ->
+takeItem.onclick = () => getItem();
+```
 
-  const getItem = () => myStorage.getItem('customKey');
+#### Good
 
-  takeItem.onclick = () => {
-    const item = getItem();
-    console.log(item);
-  }
+```js
+const getItem = () => myStorage.getItem('customKey');
+
+takeItem.onclick = () => {
+  const item = getItem();
+  console.log(item);
+}
+```
 
 --------------------------------------------------------------  
-
-### cache:
-
--> const len = arr.lenght
-
-   for(cont i =0; i < len)
-
---------------------------------------------------------------   
 
 function makeRegexParser(regex) {
     return regex.exec;
@@ -2622,7 +2619,7 @@ const writeChangedDataToFs = getData(db);
 
 writeChangedDataToFs();
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjEzMzk5MzA0MywxNzY4OTgzNDI3LC0xMD
-Y5MDA3NDUzLDE4MDYwODkwNDMsNTIwMTIwNDgwLDE1MjE5Nzg4
-ODNdfQ==
+eyJoaXN0b3J5IjpbLTg3NDE4MDgyLDE3Njg5ODM0MjcsLTEwNj
+kwMDc0NTMsMTgwNjA4OTA0Myw1MjAxMjA0ODAsMTUyMTk3ODg4
+M119
 -->
