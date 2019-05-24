@@ -599,25 +599,25 @@ var foo, qux;
 #### Bad
 
 ```js
-function foo () {
-    const self = this;
-    return new Promise(function (resolve) {
-        setTimeout(function () {
-            resolve(self.foo);
-        }, 1000);
-    });
+function foo() {
+  const self = this;
+  return new Promise(function(resolve) {
+    setTimeout(function() {
+      resolve(self.foo);
+    }, 1000);
+  });
 }
 ```
 
 #### Good
 
 ```js
-function bar () {
-    return new Promise((resolve) => {
-        setTimeout(() => {
-            resolve(this.bar);
-        }, 1000);
-    });
+function bar() {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve(this.bar);
+    }, 1000);
+  });
 }
 ```
 
@@ -1001,20 +1001,24 @@ for (let i = 0; i <= 10; i++) {
 
 -----------------------
 
-// 1. Don't over-optimize  
+### Don't over-optimize  
   
-// Bad:  
+#### Bad  
   
 // On old browsers, each iteration with uncached `list.length` would be costly  
-// because of `list.length` recomputation. In modern browsers, this is optimized.  
-for (let i = 0, len = list.length; i < len; i++) {  
-  // ...  
-}  
-// Good:  
-  
+// because of `list.length` recomputation. In modern browsers, this is optimized.
+
+```js 
+for (let i = 0, len = list.length; i < len; i++) {}  
+```
+
+#### Good  
+
+```js  
 for (let i = 0; i < list.length; i++) {  
   // ...  
 }
+```
 
 ----------------
 
@@ -2485,6 +2489,6 @@ const writeChangedDataToFs = getData(db);
 
 writeChangedDataToFs();
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjA2NzAwMzI5NiwxODA2MDg5MDQzLDUyMD
-EyMDQ4MCwxNTIxOTc4ODgzXX0=
+eyJoaXN0b3J5IjpbODAyNDE1ODkwLDE4MDYwODkwNDMsNTIwMT
+IwNDgwLDE1MjE5Nzg4ODNdfQ==
 -->
