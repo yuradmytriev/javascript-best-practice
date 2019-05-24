@@ -1604,14 +1604,12 @@ if (isDOMNodePresent(node)) {}
 -------------
   
 ### Avoid conditionals  
-  
-/*  
- This seems like an impossible task. Upon first hearing this, most people say,  "how am I supposed to do anything without an if statement?" The answer is that   
+
+This seems like an impossible task. Upon first hearing this, most people say,  "how am I supposed to do anything without an if statement?" The answer is that   
   you can use polymorphism to achieve the same task in many cases. The second question   
   is usually, "well that's great but why would I want to do that?" The answer is   
   a previous clean code concept we learned: a function should only do one thing.  
- When you have classes and functions that have if statements, you are telling your user that your  function does more than one thing. Remember, just do one thing.  
-*/  
+ When you have classes and functions that have if statements, you are telling your user that your  function does more than one thing. Remember, just do one thing.
 
 #### Bad
  
@@ -1633,43 +1631,44 @@ class Airplane {
 #### Good 
 
 ```js
-class Airplane {  
-  // ...  
-}  
-  
-class Boeing777 extends Airplane {  
-  // ...  
-  getCruisingAltitude() {  
-  return this.getMaxAltitude() - this.getPassengerCount();  
- }}  
-  
-class AirForceOne extends Airplane {  
-  // ...  
-  getCruisingAltitude() {  
-  return this.getMaxAltitude();  
- }}  
-  
-class Cessna extends Airplane {  
-  // ...  
-  getCruisingAltitude() {  
-  return this.getMaxAltitude() - this.getFuelExpenditure();  
- }}  
+class Airplane {}
+
+class Boeing777 extends Airplane {
+  getCruisingAltitude() {
+    return this.getMaxAltitude() - this.getPassengerCount();
+  }
+}
+
+class AirForceOne extends Airplane {
+  getCruisingAltitude() {
+    return this.getMaxAltitude();
+  }
+}
+
+class Cessna extends Airplane {
+  getCruisingAltitude() {
+    return this.getMaxAltitude() - this.getFuelExpenditure();
+  }
+} 
+```
   
 -------------
   
 ### Don't over-optimize  
   
-// On old browsers, each iteration with uncached `list.length` would be costly  
-// because of `list.length` recomputation. In modern browsers, this is optimized.  
-for (let i = 0, len = list.length; i < len; i++) {  
-  // ...  
-}  
+On old browsers, each iteration with uncached `list.length` would be costly because of `list.length` recomputation. In modern browsers, this is optimized.  
+
+#### Bad
+
+```js
+for (let i = 0, len = list.length; i < len; i++) {}  
+```
   
-// ->  
-  
-for (let i = 0; i < list.length; i++) {  
-  // ...  
-}
+#### Good 
+
+```js
+for (let i = 0; i < list.length; i++) {}
+```
 
 -----------------
 
@@ -2590,7 +2589,7 @@ const writeChangedDataToFs = getData(db);
 
 writeChangedDataToFs();
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzM1NDY1NjcwLDE3Njg5ODM0MjcsLTEwNj
+eyJoaXN0b3J5IjpbNjA1NDI1ODM1LDE3Njg5ODM0MjcsLTEwNj
 kwMDc0NTMsMTgwNjA4OTA0Myw1MjAxMjA0ODAsMTUyMTk3ODg4
 M119
 -->
