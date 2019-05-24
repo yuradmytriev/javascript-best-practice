@@ -1075,7 +1075,9 @@ const Car = {
 function paintCar(car) {  
   car.color = 'Red';  
 }
+
+-
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTgwNjA4OTA0Myw1MjAxMjA0ODAsMTUyMT
-k3ODg4M119
+eyJoaXN0b3J5IjpbNTQ2NDAwMTIwLDE4MDYwODkwNDMsNTIwMT
+IwNDgwLDE1MjE5Nzg4ODNdfQ==
 -->
