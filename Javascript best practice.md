@@ -1418,7 +1418,7 @@ const newName = splitIntoFirstAndLastName(name);
 console.log(name); // 'Ryan McDermott';  
 console.log(newName); // ['Ryan', 'McDermott'];  
   
-/*----------------------------------------------*/  
+-------------
   
 // 7. Avoid Side Effects v.2  
   
@@ -1432,7 +1432,7 @@ const addItemToCart = (cart, item) => {
   return [...cart, { item, date: Date.now() }];  
 };  
   
-/*----------------------------------------------*/  
+-------------
   
 // 8. Don't write to global functions  
   
@@ -1449,7 +1449,7 @@ class SuperArray extends Array {
   return this.filter(elem => !hash.has(elem));  
  }}  
   
-/*----------------------------------------------*/  
+-------------
   
 // 9. Don't write to global functions  
   
@@ -1467,7 +1467,7 @@ if (shouldShowSpinner(fsmInstance, listNodeInstance)) {
   // ...  
 }  
   
-/*----------------------------------------------*/  
+-------------
   
 // 10. Avoid negative conditionals  
   
@@ -1489,7 +1489,7 @@ if (isDOMNodePresent(node)) {
   // ...  
 }  
   
-/*----------------------------------------------*/  
+-------------
   
 // 10. Avoid conditionals  
   
@@ -1537,7 +1537,7 @@ class Cessna extends Airplane {
   return this.getMaxAltitude() - this.getFuelExpenditure();  
  }}  
   
-/*----------------------------------------------*/  
+-------------
   
 // 11. Don't over-optimize  
   
@@ -1596,7 +1596,7 @@ const sayWord = (say['sentence'] || say.nothing);
   
 sayWord('word');
 
-/*------------------- Objects and Data Structures ---------------------*/  
+## Objects and Data Structures 
   
 // 1. Use getters and setters  
   
@@ -1642,7 +1642,7 @@ function makeBankAccount() {
 const account = makeBankAccount();  
 account.setBalance(100);  
   
-/*----------------------------------------------*/  
+-------------
   
 // 2. Use method chaining  
   
@@ -1703,7 +1703,7 @@ const car = new Car('Ford', 'F-150', 'red')
  .save();  
   
   
-/*----------------------------------------------*/  
+-------------
   
 // 2. Prefer composition over inheritance  
   
@@ -1758,7 +1758,7 @@ class Employee {
 }  
   
   
-/*--------------------------------------------------*/  
+-------------
   
 // A fast half sum:  
   
@@ -1783,10 +1783,6 @@ setTimeout(blastOff, MILLISECONDS_IN_A_DAY);
 
 Bad:  car.carColor = 'Red';
 Good: car.color = 'Red';
--------------------------------------------------------
-
-3.
--------------------------------------------------------
 
 ------------------------------------------------
 
@@ -2373,7 +2369,7 @@ class PerformanceReview {
 const review = new PerformanceReview(employee);
 review.perfReview();
 
-/* ---------------------------------------------------- */
+-------------
 
 // I/O functions should have failure cases handled
 
@@ -2389,7 +2385,7 @@ function getIngredientsFromFile() {
     return readFile('./ingredients.txt').then(onFulfilled);
 }
 
-/* ---------------------------------------------------- */
+-------------
 
 // User input should be limited
 
@@ -2406,7 +2402,7 @@ router.route('/message').post((req, res) => {
     db.save(message);
 });
 
-/*------------------------------------------------------------*/
+-------------
 
 // XSS should not be possible
 
@@ -2431,7 +2427,7 @@ function () {
 
 
 
-/*-----------------------------------------------------------*/
+-------------
 
 tableColumns.length > 0 -> tableColumns.length 
 
@@ -2496,6 +2492,6 @@ const writeChangedDataToFs = getData(db);
 
 writeChangedDataToFs();
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0Mjk2MDQ0NzIsMTgwNjA4OTA0Myw1Mj
+eyJoaXN0b3J5IjpbLTE3MTkzNDQ0NjcsMTgwNjA4OTA0Myw1Mj
 AxMjA0ODAsMTUyMTk3ODg4M119
 -->
