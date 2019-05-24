@@ -1918,11 +1918,6 @@ car.color = 'Red';
 
 ------------------------------------------------
 
-Bad: const createMicrobrewery = name =>  const breweryName = name || 'Hipster Brew Co.';
-Good: const createMicrobrewery = (breweryName = 'Hipster Brew Co.') => {}
-
---------------
-
 ### Encapsulate conditionals
 
 #### Bad 
@@ -2673,7 +2668,7 @@ columnTreeNode.userType === 'subTotal' || rowTreeNode.userType === 'subTotal'
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0NjU0NjczMTAsLTE1MjYyODA3NjgsLT
-g3NDE4MDgyLDE3Njg5ODM0MjcsLTEwNjkwMDc0NTMsMTgwNjA4
-OTA0Myw1MjAxMjA0ODAsMTUyMTk3ODg4M119
+eyJoaXN0b3J5IjpbLTEwNDY2NTMsLTE1MjYyODA3NjgsLTg3ND
+E4MDgyLDE3Njg5ODM0MjcsLTEwNjkwMDc0NTMsMTgwNjA4OTA0
+Myw1MjAxMjA0ODAsMTUyMTk3ODg4M119
 -->
