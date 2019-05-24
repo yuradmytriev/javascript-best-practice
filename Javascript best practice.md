@@ -2599,22 +2599,6 @@ review.perfReview();
 
 -------------
 
-// I/O functions should have failure cases handled
-
-// Any function that does I/O should handle when something goes wrong
-
-function getIngredientsFromFile() {
-    const onFulfilled = (buffer) => {
-        let lines = buffer.split('\n');
-        return lines.forEach(line => <Ingredient ingredient={line} />)
-    };
-
-    // What about when this rejected because of an error? What do we return?
-    return readFile('./ingredients.txt').then(onFulfilled);
-}
-
--------------
-
 ### User input should be limited
 
 /* 
@@ -2632,32 +2616,21 @@ router.route('/message').post((req, res) => {
 
 -------------
 
-// XSS should not be possible
-
-/* 
-Cross-site scripting (XSS), is one of the largest vectors for security attacks on a web application. 
-It occurs when you take user data and include it in your page without first properly sanitizing it. 
-This can cause your site to execute source code from remote pages.
-*/
-
-function () {
-  let badge = document.getElementsByClassName('badge');
-  let nameQueryParam = getQueryParams('name');
-
-  /**
-    * What if nameQueryParam was `<script>sendCookie(document.cookie)</script>`?
-    * If that was the query param, a malicious user could lure a user to click a
-    * link with that as the `name` query param, and have the user unknowingly
-    * send their data to a bad actor.
-    */
-  badge.children[0].innerHTML = nameQueryParam;
-}
-
 
 
 -------------
 
-tableColumns.length > 0 -> tableColumns.length 
+#### Bad
+
+```js
+if (tableColumns.length > 0) {}
+```
+
+#### Good
+
+```js
+if (tableColumns.length) {} 
+```
 
 ---------------------------------------------------------------
 
@@ -2699,7 +2672,7 @@ columnTreeNode.userType === 'subTotal' || rowTreeNode.userType === 'subTotal'
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTU3OTIzNDY3MSwtMTUyNjI4MDc2OCwtOD
+eyJoaXN0b3J5IjpbMTQyODk2MDQyMywtMTUyNjI4MDc2OCwtOD
 c0MTgwODIsMTc2ODk4MzQyNywtMTA2OTAwNzQ1MywxODA2MDg5
 MDQzLDUyMDEyMDQ4MCwxNTIxOTc4ODgzXX0=
 -->
