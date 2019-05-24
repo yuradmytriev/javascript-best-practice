@@ -1667,6 +1667,9 @@ for (let i = 0; i < list.length; i++) {}
 
 ### if/else propblem
 
+#### Bad
+
+```js
 const say = (word, sentence) => {  
   if (sentence) {  
   console.log(sentence);  
@@ -1675,36 +1678,32 @@ const say = (word, sentence) => {
 };  
   
 say(null, 'sentence');  
-  
-->  
-  
-const say = (word, sentence) => {  
-  if (word) {  
-  console.log(word);  
- }  return (sentence) => {  
-  console.log(sentence);  
-  return;  
- }};  
-  
-const saySentence = say(null);  
-  
-saySentence('sentence');   
-->  
-  
-const say = {  
-  word(word) {  
-  console.log(word);  
-  return;  
- },  sentence(sentence) {  
-  console.log(sentence);  
-  return;  
- },  nothing() {  
-  return;  
- }};  
-  
-const sayWord = (say['sentence'] || say.nothing);  
-  
+```
+
+#### Good 
+
+```js
+const say = {
+  word(word) {
+    console.log(word);
+    return;
+  },
+  sentence(sentence) {
+    console.log(sentence);
+    return;
+  },
+  nothing() {
+    return;
+  }
+};
+
+const sayWord = (say['sentence'] || say.nothing);
+
 sayWord('word');
+
+```
+
+-----------
 
 ## Objects and Data Structures 
   
@@ -2582,7 +2581,7 @@ const writeChangedDataToFs = getData(db);
 
 writeChangedDataToFs();
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3MDMxOTY1NzUsMTc2ODk4MzQyNywtMT
-A2OTAwNzQ1MywxODA2MDg5MDQzLDUyMDEyMDQ4MCwxNTIxOTc4
-ODgzXX0=
+eyJoaXN0b3J5IjpbLTQ4MjgzMjQ0OSwxNzY4OTgzNDI3LC0xMD
+Y5MDA3NDUzLDE4MDYwODkwNDMsNTIwMTIwNDgwLDE1MjE5Nzg4
+ODNdfQ==
 -->
