@@ -1902,19 +1902,17 @@ const hasEitherClass = (element, classNamel, className2) => {
 
 --------------------------------------------------------------
 
-15. Для функции конструктора используются заглавные буквы
+### Для функции конструктора используются заглавные буквы
 
 --------------------------------------------------------------
 
-16. cache:
+### cache:
 
 -> const len = arr.lenght
 
    for(cont i =0; i < len)
 
 --------------------------------------------------------------   
-
-17. 
 
 function makeRegexParser(regex) {
     return regex.exec;
@@ -1928,8 +1926,6 @@ var parseSsn = /^\d{3}-\d{2}-\d{4}$/.exec;
 var parsePhone = /^\(\d{3}\)\d{3}-\d{4}$/.exec; 
 
 --------------------------------------------------------------
-
-18. 
 
 // bad
 function moreThanThree(number){
@@ -1970,9 +1966,7 @@ if(Object.keys(labelCounts).includes(label)){
 
 -------------------------------------------------------------
 
-20. 
-
-DUPLICATION IN CONDITIONALS: ANOTHER TYPE OF USELESS CODE
+### DUPLICATION IN CONDITIONALS: ANOTHER TYPE OF USELESS CODE
 
 if(dog.weight > 40){
  buyFood('big bag');
@@ -1996,9 +1990,7 @@ dog.feed();
 
 -------------------------------------------------------------
 
-21.
-
-Long Lines:
+### Long Lines:
 
 probabilityOfChordsInLabels[difficulty][chord] = probabilityOfChords (line continues...)
 
@@ -2009,9 +2001,7 @@ chordInstances = probabilityOfChords ...
 
 -----------------------------------------------------------------
 
-22.
-
-Inlining Function Calls
+### Inlining Function Calls
 
 function getNumberOfSongs(){
  return songs.length;
@@ -2027,8 +2017,6 @@ function getNumberOfSongs(){
 
 ----------------------------------------------------------------
 
-23. 
-
 // bad
 const legthOfArray = array.length; // this case don`t need explanation
 
@@ -2037,7 +2025,7 @@ const isWidthResizeable = width !== null; // but this need
 
 ----------------------------------------------------------------
 
-24. Methods can return this to help with method chaining.
+### Methods can return this to help with method chaining.
 
 // bad
 Jedi.prototype.jump = function () {
@@ -2073,7 +2061,7 @@ luke.jump()
 
 ----------------------------------------------------------
 
-25. Do not use wildcard imports.
+### Do not use wildcard imports.
 
 Why? This makes sure you have a single default export.
 
@@ -2085,7 +2073,7 @@ import AirbnbStyleGuide from './AirbnbStyleGuide';
 
 -----------------------------------------------------------
 
-26. And do not export directly from an import.
+### And do not export directly from an import.
 
 Why? Although the one-liner is concise, having one clear way to import and one clear way to export makes things consistent.
 
@@ -2100,7 +2088,7 @@ export default es6;
 
 -----------------------------------------------------------
 
-27. Only import from a path in one place. eslint: no-duplicate-imports
+### Only import from a path in one place. eslint: no-duplicate-imports
 
 Why? Having multiple lines that import from the same path can make code harder to maintain.
 
@@ -2120,7 +2108,7 @@ import foo, {
 
 ------------------------------------------------------------------
 
-28. In modules with a single export, prefer default export over named export. eslint: import/prefer-default-export
+### In modules with a single export, prefer default export over named export. eslint: import/prefer-default-export
 
 Why? To encourage more files that only ever export one thing, which is better for readability and maintainability.
 
@@ -2132,7 +2120,7 @@ export default function foo() {}
 
 ---------------------------------------------
 
-29. Multiline imports should be indented just like multiline array and object literals.
+### Multiline imports should be indented just like multiline array and object literals.
 
 Why? The curly braces follow the same indentation rules as every other curly brace block in the style guide, as do the trailing commas.
 
@@ -2150,7 +2138,7 @@ import {
 
 ---------------------------------------------
 
-30. Use one const or let declaration per variable. eslint: one-var
+### Use one const or let declaration per variable. eslint: one-var
 
 Why? It’s easier to add new variable declarations this way, and you never have to worry about swapping out a ; for a , or introducing punctuation-only diffs. You can also step through each declaration with the debugger, instead of jumping through all of them at once.
 
@@ -2172,7 +2160,7 @@ const dragonball = 'z';
 
 ---------------------------------------------
 
-31. Avoid using unary increments and decrements (++, --). eslint no-plusplus
+### Avoid using unary increments and decrements (++, --). eslint no-plusplus
 
 Why? Per the eslint documentation, unary increment and decrement statements are subject to 
 automatic semicolon insertion and can cause silent errors with incrementing or decrementing 
@@ -2183,7 +2171,7 @@ also cause unexpected behavior in your programs.
 
 --------------------------------------------------
 
-32. Avoid unneeded ternary statements. eslint: no-unneeded-ternary
+### Avoid unneeded ternary statements. eslint: no-unneeded-ternary
 
 // bad
 const foo = a ? a : b;
@@ -2201,7 +2189,7 @@ const baz = !c;
 
 ---------------------------------------------------
 
-34. Do not pad your blocks with blank lines. eslint: padded-blocks
+### Do not pad your blocks with blank lines. eslint: padded-blocks
 
 // bad
 function bar() {
@@ -2217,7 +2205,7 @@ function bar() {
 
 ---------------------------------------
 
-35. Do not add spaces inside parentheses. eslint: space-in-parens
+### Do not add spaces inside parentheses. eslint: space-in-parens
 
 // bad
 function bar( foo ) {
@@ -2486,6 +2474,6 @@ const writeChangedDataToFs = getData(db);
 
 writeChangedDataToFs();
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzODY2NDQzLDE4MDYwODkwNDMsNTIwMT
-IwNDgwLDE1MjE5Nzg4ODNdfQ==
+eyJoaXN0b3J5IjpbMTcyMjUwNTIyNywxODA2MDg5MDQzLDUyMD
+EyMDQ4MCwxNTIxOTc4ODgzXX0=
 -->
