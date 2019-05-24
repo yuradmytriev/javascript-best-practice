@@ -2171,8 +2171,8 @@ labelProbabilities[label] = labelCounts[label] / numberOfSongs;
 #### Good
 
 ```js
- var numberOfSongs = songs.length;
- labelProbabilities[label] = labelCounts[label] / numberOfSongs;
+var numberOfSongs = songs.length;
+labelProbabilities[label] = labelCounts[label] / numberOfSongs;
 ```
 
 ----------------------------------------------------------------
@@ -2180,7 +2180,8 @@ labelProbabilities[label] = labelCounts[label] / numberOfSongs;
 // bad
 const legthOfArray = array.length; // this case don`t need explanation
 
-//good
+#### Good
+
 const isWidthResizeable = width !== null; // but this need
 
 ----------------------------------------------------------------
@@ -2201,7 +2202,8 @@ const luke = new Jedi();
 luke.jump(); // => true
 luke.setHeight(20); // => undefined
 
-// good
+#### Good
+
 class Jedi {
   jump() {
     this.jumping = true;
@@ -2228,7 +2230,8 @@ Why? This makes sure you have a single default export.
 // bad
 import * as AirbnbStyleGuide from './AirbnbStyleGuide';
 
-// good
+#### Good
+
 import AirbnbStyleGuide from './AirbnbStyleGuide';  
 
 -----------------------------------------------------------
@@ -2241,7 +2244,8 @@ Why? Although the one-liner is concise, having one clear way to import and one c
 // filename es6.js
 export { es6 as default } from './AirbnbStyleGuide';
 
-// good
+#### Good
+
 // filename es6.js
 import { es6 } from './AirbnbStyleGuide';
 export default es6;
@@ -2257,10 +2261,12 @@ import foo from 'foo';
 // … some other imports … //
 import { named1, named2 } from 'foo';
 
-// good
+#### Good
+
 import foo, { named1, named2 } from 'foo';
 
-// good
+#### Good
+
 import foo, {
   named1,
   named2,
@@ -2275,7 +2281,8 @@ Why? To encourage more files that only ever export one thing, which is better fo
 // bad
 export function foo() {}
 
-// good
+#### Good
+
 export default function foo() {}
 
 ---------------------------------------------
@@ -2287,7 +2294,8 @@ Why? The curly braces follow the same indentation rules as every other curly bra
 // bad
 import {longNameA, longNameB, longNameC, longNameD, longNameE} from 'path';
 
-// good
+#### Good
+
 import {
   longNameA,
   longNameB,
@@ -2313,7 +2321,8 @@ const items = getItems(),
     goSportsTeam = true;
     dragonball = 'z';
 
-// good
+#### Good
+
 const items = getItems();
 const goSportsTeam = true;
 const dragonball = 'z';
@@ -2338,7 +2347,8 @@ const foo = a ? a : b;
 const bar = c ? true : false;
 const baz = c ? false : true;
 
-// good
+#### Good
+
 const foo = a || b;
 const bar = !!c;
 const baz = !c;
@@ -2358,7 +2368,7 @@ function bar() {
 
 }
 
-// good
+#### Good
 function bar() {
   console.log(foo);
 }
@@ -2632,7 +2642,7 @@ const writeChangedDataToFs = getData(db);
 
 writeChangedDataToFs();
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTY0NjUyODE0MSwtODc0MTgwODIsMTc2OD
-k4MzQyNywtMTA2OTAwNzQ1MywxODA2MDg5MDQzLDUyMDEyMDQ4
-MCwxNTIxOTc4ODgzXX0=
+eyJoaXN0b3J5IjpbLTIwOTA0MTcxNTUsLTg3NDE4MDgyLDE3Nj
+g5ODM0MjcsLTEwNjkwMDc0NTMsMTgwNjA4OTA0Myw1MjAxMjA0
+ODAsMTUyMTk3ODg4M119
 -->
