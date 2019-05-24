@@ -2179,11 +2179,15 @@ labelProbabilities[label] = labelCounts[label] / numberOfSongs;
 
 #### Bad 
 
+```js
 const legthOfArray = array.length; // this case don`t need explanation
+```
 
 #### Good
 
+```js
 const isWidthResizeable = width !== null; // but this need
+```
 
 ----------------------------------------------------------------
 
@@ -2191,6 +2195,7 @@ const isWidthResizeable = width !== null; // but this need
 
 #### Bad 
 
+```js
 Jedi.prototype.jump = function () {
   this.jumping = true;
   return true;
@@ -2203,9 +2208,11 @@ Jedi.prototype.setHeight = function (height) {
 const luke = new Jedi();
 luke.jump(); // => true
 luke.setHeight(20); // => undefined
+```
 
 #### Good
 
+```js
 class Jedi {
   jump() {
     this.jumping = true;
@@ -2222,6 +2229,7 @@ const luke = new Jedi();
 
 luke.jump()
   .setHeight(20);
+```
 
 ----------------------------------------------------------
 
@@ -2231,11 +2239,15 @@ Why? This makes sure you have a single default export.
 
 #### Bad 
 
+```js
 import * as AirbnbStyleGuide from './AirbnbStyleGuide';
+```
 
 #### Good
 
+```js
 import AirbnbStyleGuide from './AirbnbStyleGuide';  
+```
 
 -----------------------------------------------------------
 
@@ -2245,12 +2257,16 @@ Why? Although the one-liner is concise, having one clear way to import and one c
 
 #### Bad 
 
+```js
 export { es6 as default } from './AirbnbStyleGuide';
+```
 
 #### Good
 
+```js
 import { es6 } from './AirbnbStyleGuide';
 export default es6;
+```
 
 -----------------------------------------------------------
 
@@ -2259,9 +2275,12 @@ export default es6;
 Why? Having multiple lines that import from the same path can make code harder to maintain.
 
 #### Bad 
+
+```js
 import foo from 'foo';
 // … some other imports … //
 import { named1, named2 } from 'foo';
+```
 
 #### Good
 
@@ -2380,7 +2399,7 @@ function bar() {
 
 ### Do not add spaces inside parentheses. eslint: space-in-parens
 
-// bad
+#### Bad 
 function bar( foo ) {
   return foo;
 }
@@ -2395,7 +2414,7 @@ if (foo) {
 
 ### Add spaces inside curly braces. eslint: object-curly-spacing
 
-// bad
+#### Bad 
 const foo = {clark: 'kent'};
 
 #### Good
@@ -2408,7 +2427,7 @@ const foo = { clark: 'kent' };
 
 Why? JavaScript does not have the concept of privacy in terms of properties or methods. Although a leading underscore is a common convention to mean “private”, in fact, these properties are fully public, and as such, are part of your public API contract. This convention might lead developers to wrongly think that a change won’t count as breaking, or that tests aren’t needed. tl;dr: if you want something to be “private”, it must not be observably present.
 
-// bad
+#### Bad 
 this.__firstName__ = 'Panda';
 this.firstName_ = 'Panda';
 this._firstName = 'Panda';
@@ -2448,7 +2467,7 @@ $('.other-button').on('click', visitSite);
 
 ### Function callers and callees should be close
 
-Bad:
+#### Bad 
 
 class PerformanceReview {
     constructor(employee) {
@@ -2647,7 +2666,7 @@ const writeChangedDataToFs = getData(db);
 
 writeChangedDataToFs();
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTI2Njk3NjU5NywtODc0MTgwODIsMTc2OD
-k4MzQyNywtMTA2OTAwNzQ1MywxODA2MDg5MDQzLDUyMDEyMDQ4
-MCwxNTIxOTc4ODgzXX0=
+eyJoaXN0b3J5IjpbOTcyMDM0NjAwLC04NzQxODA4MiwxNzY4OT
+gzNDI3LC0xMDY5MDA3NDUzLDE4MDYwODkwNDMsNTIwMTIwNDgw
+LDE1MjE5Nzg4ODNdfQ==
 -->
