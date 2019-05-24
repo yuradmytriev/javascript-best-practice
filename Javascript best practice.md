@@ -2403,10 +2403,6 @@ const baz = !c;
 
 --------------------------------------------------
 
-33. start all comments with a space to make it easier to read. eslint: spaced-comment
-
----------------------------------------------------
-
 ### Do not pad your blocks with blank lines. eslint: padded-blocks
 
 #### Bad 
@@ -2478,14 +2474,11 @@ this._firstName = 'Panda';
 ```
 
 #### Good
+good, in environments where WeakMaps are available. See https://kangax.github.io/compat-table/es6/#test-WeakMap
 
 ```js
 this.firstName = 'Panda';
-```
 
-// good, in environments where WeakMaps are available
-// see https://kangax.github.io/compat-table/es6/#test-WeakMap
-```js
 const firstNames = new WeakMap();
 firstNames.set(this, 'Panda');
 ```
@@ -2494,6 +2487,9 @@ firstNames.set(this, 'Panda');
 
 ### A base filename should exactly match the name of its default export.
 
+#### Bad
+
+```js
 var siteUrl = "http://refactoringjs.com";
 $('.my-button').on('click', function(){
  window.location = siteUrl;
@@ -2501,17 +2497,22 @@ $('.my-button').on('click', function(){
 $('.other-button').on('click', function(){
  window.location = siteUrl;
 });
+```
 
 This does make it easier to change siteUrl in the future (assuming it is
 used in other places), but we can reduce duplication further by extracting a
 function:
 
+#### Good
+
+```js
 var siteUrl = "http://refactoringjs.com";
 function visitSite(){
  window.location = siteUrl;
 }
 $('.my-button').on('click', visitSite);
 $('.other-button').on('click', visitSite);
+```
 
 ----------------------------------------------------
 
@@ -2672,7 +2673,7 @@ columnTreeNode.userType === 'subTotal' || rowTreeNode.userType === 'subTotal'
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQyODk2MDQyMywtMTUyNjI4MDc2OCwtOD
-c0MTgwODIsMTc2ODk4MzQyNywtMTA2OTAwNzQ1MywxODA2MDg5
-MDQzLDUyMDEyMDQ4MCwxNTIxOTc4ODgzXX0=
+eyJoaXN0b3J5IjpbLTE0NjU0NjczMTAsLTE1MjYyODA3NjgsLT
+g3NDE4MDgyLDE3Njg5ODM0MjcsLTEwNjkwMDc0NTMsMTgwNjA4
+OTA0Myw1MjAxMjA0ODAsMTUyMTk3ODg4M119
 -->
