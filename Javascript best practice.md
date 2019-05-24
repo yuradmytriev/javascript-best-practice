@@ -1074,31 +1074,36 @@ for (let i = 0; i < minutesInYear; i += 1) {
 -------------
 
 ### Avoid Mental Mapping  
-  
-const locations = ['Austin', 'New York', 'San Francisco'];  
-locations.forEach((l) => {  
-  doStuff();  
-  doSomeOtherStuff();  
+
+#### Bad
+
+```js
+const locations = ['Austin', 'New York', 'San Francisco'];
+locations.forEach((l) => {
+  doStuff();
+  doSomeOtherStuff();
   // ...  
- // ... // ... // Wait, what is `l` for again?  dispatch(l);  
-});  
+  // ... 
+  dispatch(l);
+});
+```  
   
 #### Good
 
 ```js
-const locations = ['Austin', 'New York', 'San Francisco'];  
-locations.forEach((location) => {  
-  doStuff();  
-  doSomeOtherStuff();  
-	
-	dispatch(location);  
+const locations = ['Austin', 'New York', 'San Francisco'];
+locations.forEach((location) => {
+  doStuff();
+  doSomeOtherStuff();
+  // ...
+  dispatch(location);
 });
 ```
 
 -------------
   
 ### Don't add unneeded context  
-  
+ 
 const Car = {  
   carMake: 'Honda',  
   carModel: 'Accord',  
@@ -1109,7 +1114,7 @@ function paintCar(car) {
   car.carColor = 'Red';  
 }  
   
-// ->  
+#### Good
   
 const Car = {  
   make: 'Honda',  
@@ -2486,6 +2491,6 @@ const writeChangedDataToFs = getData(db);
 
 writeChangedDataToFs();
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTY0NTY3Nzg3MywxODA2MDg5MDQzLDUyMD
-EyMDQ4MCwxNTIxOTc4ODgzXX0=
+eyJoaXN0b3J5IjpbLTExOTAyODQ5NTYsMTgwNjA4OTA0Myw1Mj
+AxMjA0ODAsMTUyMTk3ODg4M119
 -->
