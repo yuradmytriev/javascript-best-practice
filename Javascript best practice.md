@@ -1338,16 +1338,14 @@ var subtract = Function('a', 'b', 'return a - b');
 ```js
 // 1. Function arguments (2 or fewer ideally)  
   
-function createMenu(title, body, buttonText, cancellable) {  
-  // ...  
-}  
+function createMenu(title, body, buttonText, cancellable) {}  
 ```
   
 #### Good
   
-function createMenu({ title, body, buttonText, cancellable }) {  
-  // ...  
-}  
+```js
+function createMenu({ title, body, buttonText, cancellable }) {}  
+```
   
 -------------
   
@@ -1355,25 +1353,31 @@ function createMenu({ title, body, buttonText, cancellable }) {
 
 #### Bad
 
-function emailClients(clients) {  
-  clients.forEach((client) => {  
-  const clientRecord = database.lookup(client);  
-  if (clientRecord.isActive()) {  
-  email(client);  
- } });}  
+```js
+function emailClients(clients) {
+  clients.forEach((client) => {
+    const clientRecord = database.lookup(client);
+    if (clientRecord.isActive()) {
+      email(client);
+    }
+  });
+}
+```
   
 #### Good
-  
-function emailActiveClients(clients) {  
-  clients  
-      .filter(isActiveClient)  
- .forEach(email);  
-}  
-  
-function isActiveClient(client) {  
-  const clientRecord = database.lookup(client);  
-  return clientRecord.isActive();  
-}  
+
+```js
+function emailActiveClients(clients) {
+  clients
+    .filter(isActiveClient)
+    .forEach(email);
+}
+
+function isActiveClient(client) {
+  const clientRecord = database.lookup(client);
+  return clientRecord.isActive();
+}
+```
   
 ------------- 
   
@@ -1381,15 +1385,16 @@ function isActiveClient(client) {
 
 #### Bad
  
+```js
 function addToDate(date, month) {  
-  // ...  
-}  
+  // ...}  
   
 const date = new Date();  
   
 // It's hard to tell from the function name what is added  
 addToDate(date, 1);  
-  
+```
+
 #### Good
   
 function addMonthToDate(month, date) {  
@@ -2562,6 +2567,6 @@ const writeChangedDataToFs = getData(db);
 
 writeChangedDataToFs();
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTk2MTcxMzU5MCwtMTA2OTAwNzQ1MywxOD
-A2MDg5MDQzLDUyMDEyMDQ4MCwxNTIxOTc4ODgzXX0=
+eyJoaXN0b3J5IjpbLTE0OTkwNDA3NjYsLTEwNjkwMDc0NTMsMT
+gwNjA4OTA0Myw1MjAxMjA0ODAsMTUyMTk3ODg4M119
 -->
