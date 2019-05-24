@@ -1268,26 +1268,26 @@ const itemHeight = item => (item.height > 256 ? item.largeSize : item.smallSize)
 // Why? Reassigning parameters can lead to unexpected behavior, especially when accessing the arguments object. It can also cause optimization issues, especially in V8.  
   
 #### Bad
+
+```js
 function f1(a) {  
-  a = 1;  
-  // ...  
-}  
+  a = 1; 
+}
   
 function f2(a) {  
   if (!a) { a = 1; }  
-  // ...  
 }  
+```
   
 #### Good
 
+```js
 function f3(a) {  
   const b = a || 1;  
-  // ...  
 }  
   
-function f4(a = 1) {  
-  // ...  
-}  
+function f4(a = 1) {}  
+```
   
 -------------
   
@@ -1296,15 +1296,20 @@ function f4(a = 1) {
 // Why? Manipulating objects passed in as parameters can cause unwanted variable side effects in the original caller.  
   
 #### Bad
+
+```js
 function f1(obj) {  
   obj.key = 1;  
 }  
+```
   
 #### Good 
 
+```js
 function f2(obj) {  
   const key = Object.prototype.hasOwnProperty.call(obj, 'key') ? obj.key : 1;  
 }  
+```
   
 -------------
   
@@ -1313,21 +1318,30 @@ function f2(obj) {
 // Why? Creating a function in this way evaluates a string similarly to eval(), which opens vulnerabilities.  
   
 #### Bad
+
+```js
 var add = new Function('a', 'b', 'return a + b');  
+```
   
 // still bad  
+
+```js
 var subtract = Function('a', 'b', 'return a - b'); 
+```
  
 -------------
 
 ## Functions  
   
 #### Bad  
+
+```js
 // 1. Function arguments (2 or fewer ideally)  
   
 function createMenu(title, body, buttonText, cancellable) {  
   // ...  
 }  
+```
   
 #### Good
   
@@ -2548,6 +2562,6 @@ const writeChangedDataToFs = getData(db);
 
 writeChangedDataToFs();
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTY5MTgwMzE3MywtMTA2OTAwNzQ1MywxOD
+eyJoaXN0b3J5IjpbMTk2MTcxMzU5MCwtMTA2OTAwNzQ1MywxOD
 A2MDg5MDQzLDUyMDEyMDQ4MCwxNTIxOTc4ODgzXX0=
 -->
