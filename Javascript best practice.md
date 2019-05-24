@@ -2081,6 +2081,10 @@ var parsePhone = /^\(\d{3}\)\d{3}-\d{4}$/.exec;
 
 --------------------------------------------------------------
 
+This function returns either a boolean or a string (see Figure 5-10). This isn’t
+great because code that calls this function will likely have its own conditionals
+to check for which type was returned.
+
 #### Bad
 
 ```js
@@ -2105,29 +2109,29 @@ function moreThanThree(number) {
 };
 ```
 
-
-This function returns either a boolean or a string (see Figure 5-10). This isn’t
-great because code that calls this function will likely have its own conditionals
-to check for which type was returned.
-
 --------------------------------------------------------------
 
-19. 
+### Do-Nothing Code
+Moving on to do-nothing code, we have an example of this in our file. The conditional check that follows contains an unnecessary part:
 
-Do-Nothing Code
-Moving on to do-nothing code, we have an example of this in our file. The conditional
-check that follows contains an unnecessary part:
+#### Bad 
 
-if(!!(Object.keys(labelCounts).includes(label))){
+```js
+if(!!(Object.keys(labelCounts).includes(label))) {}
+```
 
-->
+#### Good 
 
-if(Object.keys(labelCounts).includes(label)){
-
+```js
+if(Object.keys(labelCounts).includes(label)) {}
+```
 -------------------------------------------------------------
 
 ### DUPLICATION IN CONDITIONALS: ANOTHER TYPE OF USELESS CODE
 
+#### Bad 
+
+```js
 if(dog.weight > 40){
  buyFood('big bag');
  dog.feed();
@@ -2136,9 +2140,11 @@ else{
  buyFood('small bag');
  dog.feed();
 }
+```
 
--> 
+#### Good
 
+```js
 if(dog.weight > 40){
  buyFood('big bag');
 }
@@ -2632,7 +2638,7 @@ const writeChangedDataToFs = getData(db);
 
 writeChangedDataToFs();
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQ0MjI0NDA3MSwtODc0MTgwODIsMTc2OD
+eyJoaXN0b3J5IjpbLTQwODQzMjc1MiwtODc0MTgwODIsMTc2OD
 k4MzQyNywtMTA2OTAwNzQ1MywxODA2MDg5MDQzLDUyMDEyMDQ4
 MCwxNTIxOTc4ODgzXX0=
 -->
