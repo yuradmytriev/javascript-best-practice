@@ -1887,15 +1887,31 @@ const mid = Math.floor(low + ((hight - low) / 2)); // it`s better
 
 ---------------
 
-Bad: setTimeout(blastOff, 86400000);
-Good:
+#### Bad
+
+```js
+setTimeout(blastOff, 86400000);
+```
+
+#### Good
+
+```js
 const MILLISECONDS_IN_A_DAY = 86400000;
 setTimeout(blastOff, MILLISECONDS_IN_A_DAY);
 
 -------------------------------------------------------
 
-Bad:  car.carColor = 'Red';
-Good: car.color = 'Red';
+#### Bad
+
+```js
+car.carColor = 'Red';
+```
+
+#### Good
+
+```js
+car.color = 'Red';
+```
 
 ------------------------------------------------
 
@@ -1906,12 +1922,18 @@ Good: const createMicrobrewery = (breweryName = 'Hipster Brew Co.') => {}
 
 ### Encapsulate conditionals
 
-Bad: if (fsm.state === 'fetching') {}
-Good:
+#### Bad 
+
+```js
+if (fsm.state === 'fetching') {}
+```
+
+#### Good
+
+```js
 const shouldShowSpinner (fsm, listNode) => fsm.state === 'fetching';
 if (shouldShowSpinner(fsmInstance, listNodeInstance)) {}
-
-5. Avoid negative conditionals
+```
 
 --------------------------------------------------------------
 
@@ -2587,7 +2609,7 @@ const writeChangedDataToFs = getData(db);
 
 writeChangedDataToFs();
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwODQzNDQ4NzYsMTc2ODk4MzQyNywtMT
-A2OTAwNzQ1MywxODA2MDg5MDQzLDUyMDEyMDQ4MCwxNTIxOTc4
-ODgzXX0=
+eyJoaXN0b3J5IjpbMTg5ODM1NDQ5NiwxNzY4OTgzNDI3LC0xMD
+Y5MDA3NDUzLDE4MDYwODkwNDMsNTIwMTIwNDgwLDE1MjE5Nzg4
+ODNdfQ==
 -->
