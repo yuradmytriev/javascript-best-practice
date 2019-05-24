@@ -1825,7 +1825,6 @@ const car = new Car('Ford', 'F-150', 'red')
   
 ### Prefer composition over inheritance  
   
-/*  
 As stated famously in Design Patterns by the Gang of Four, you should prefer composition over inheritance where you can.  
 There are lots of good reasons to use inheritance and lots of good reasons to use composition.The main point for this maxim is that if your mind instinctively goes for inheritance, try to think if composition could model your problem better.  
 In some cases it can.  
@@ -1834,48 +1833,51 @@ You might be wondering then, "when should I use inheritance?" It depends on your
   
 Your inheritance represents an "is-a" relationship and not a "has-a" relationship(Human -> Animal vs.User -> UserDetails).  
 You can reuse code from the base classes(Humans can move like all animals).  
-You want to make global changes to derived classes by changing a base class.(Change the caloric expenditure of all animals when they move).  
-*/  
-  
-class Employee {  
-  constructor(name, email) {  
-  this.name = name;  
-  this.email = email;  
- }  
-  // ...  
-}  
-  
+You want to make global changes to derived classes by changing a base class.(Change the caloric expenditure of all animals when they move).
+
+#### Bad 
+
+```js
+class Employee {
+  constructor(name, email) {
+    this.name = name;
+    this.email = email;
+  }
+}
+
 // Bad because Employees "have" tax data. EmployeeTaxData is not a type of Employee  
-class EmployeeTaxData extends Employee {  
-  constructor(ssn, salary) {  
-  super();  
-  this.ssn = ssn;  
-  this.salary = salary;  
- }  
+class EmployeeTaxData extends Employee {
+  constructor(ssn, salary) {
+    super();
+    this.ssn = ssn;
+    this.salary = salary;
+  } 
+}
+```
+  
+#### Good 
+
+```js
+class EmployeeTaxData {
+  constructor(ssn, salary) {
+    this.ssn = ssn;
+    this.salary = salary;
+  }
   // ...  
-}  
-  
-// ->  
-  
-class EmployeeTaxData {  
-  constructor(ssn, salary) {  
-  this.ssn = ssn;  
-  this.salary = salary;  
- }  
-  // ...  
-}  
-  
-class Employee {  
-  constructor(name, email) {  
-  this.name = name;  
-  this.email = email;  
- }  
-  setTaxData(ssn, salary) {  
-  this.taxData = new EmployeeTaxData(ssn, salary);  
- }  // ...  
-}  
-  
-  
+}
+
+class Employee {
+  constructor(name, email) {
+    this.name = name;
+    this.email = email;
+  }
+  setTaxData(ssn, salary) {
+    this.taxData = new EmployeeTaxData(ssn, salary);
+  } // ...  
+}
+ 
+```
+
 -------------
   
 ### A fast half sum:  
@@ -2590,7 +2592,7 @@ const writeChangedDataToFs = getData(db);
 
 writeChangedDataToFs();
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5MDgyNzAyMDEsMTc2ODk4MzQyNywtMT
-A2OTAwNzQ1MywxODA2MDg5MDQzLDUyMDEyMDQ4MCwxNTIxOTc4
-ODgzXX0=
+eyJoaXN0b3J5IjpbMjA3OTExMjAyOCwxNzY4OTgzNDI3LC0xMD
+Y5MDA3NDUzLDE4MDYwODkwNDMsNTIwMTIwNDgwLDE1MjE5Nzg4
+ODNdfQ==
 -->
