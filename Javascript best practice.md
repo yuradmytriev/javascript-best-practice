@@ -1005,8 +1005,7 @@ for (let i = 0; i <= 10; i++) {
   
 #### Bad  
   
-// On old browsers, each iteration with uncached `list.length` would be costly  
-// because of `list.length` recomputation. In modern browsers, this is optimized.
+On old browsers, each iteration with uncached `list.length` would be costly because of `list.length` recomputation. In modern browsers, this is optimized.
 
 ```js 
 for (let i = 0, len = list.length; i < len; i++) {}  
@@ -1015,24 +1014,27 @@ for (let i = 0, len = list.length; i < len; i++) {}
 #### Good  
 
 ```js  
-for (let i = 0; i < list.length; i++) {  
-  // ...  
-}
+for (let i = 0; i < list.length; i++) {}
 ```
 
 ----------------
 
-/*------------------- Variables ---------------------*/  
+## Variables  
   
-// 1. Use meaningful variable names  
-  
+### Use meaningful variable names  
+
+#### Bad
+
+```js  
 const yyyymmdstr = moment.format('YYYY/MM/DD');  
-  
-// ->  
-  
+```    
+#### Good
+
+```js
 const yearsMonthDay = moment.format('YYYY/MM/DD');  
+```
   
-/*----------------------------------------------*/  
+-------------
   
 // 2. Remove obvious data  
   
@@ -2489,6 +2491,6 @@ const writeChangedDataToFs = getData(db);
 
 writeChangedDataToFs();
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODAyNDE1ODkwLDE4MDYwODkwNDMsNTIwMT
-IwNDgwLDE1MjE5Nzg4ODNdfQ==
+eyJoaXN0b3J5IjpbLTE1Njk0MTI4NTIsMTgwNjA4OTA0Myw1Mj
+AxMjA0ODAsMTUyMTk3ODg4M119
 -->
