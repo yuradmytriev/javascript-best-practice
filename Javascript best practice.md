@@ -945,22 +945,13 @@ const [, city, zipCode] = address.match(cityZipCodeRegex) || [];
 saveCityZipCode(city, zipCode);  
 ```
   
-/*----------------------------------------------*/  
+---------
   
-// 2. Use Array.from instead of spread ... for mapping over iterables, because it avoids creating an intermediate array.  
-  
-// bad  
-const baz = [...foo].map(bar);  
-  
-// good  
-const baz = Array.from(foo, bar);  
-  
-/*----------------------------------------------*/  
-  
-// 3. Array Alternative: Sets  
+#### Array Alternative: Sets  
   
 // So with a set instead of an array, we can turn this code:  
   
+```js  
 var allChords = []; //this is outside the train function  
 // this is inside the train function  
 chords.forEach(chord => {  
@@ -971,6 +962,7 @@ into this code:
 var allChords = new Set(); // this is outside the train function  
 // this is inside the train function  
 chords.forEach(chord => allChords.add(chord));
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTc0MzQ3MzQ2NSwxNTIxOTc4ODgzXX0=
+eyJoaXN0b3J5IjpbMTkxMjQzODkzMCwxNTIxOTc4ODgzXX0=
 -->
