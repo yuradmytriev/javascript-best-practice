@@ -1083,7 +1083,7 @@ locations.forEach((location) => {
 
 -------------
   
-// 6. Don't add unneeded context  
+### Don't add unneeded context  
   
 const Car = {  
   carMake: 'Honda',  
@@ -1109,7 +1109,7 @@ function paintCar(car) {
 
 -----------------
 
-// 7. Use default arguments instead of short circuiting or conditionals  
+### Use default arguments instead of short circuiting or conditionals  
   
 function createMicrobrewery(name) {  
   const breweryName = name || 'Hipster Brew Co.';  
@@ -1126,7 +1126,7 @@ function createMicrobrewery(name = 'Hipster Brew Co.') {
 
 ## Functions:
 
-// 1. Note: ECMA-262 defines a block as a list of statements. A function declaration is not a statement.  
+### Note: ECMA-262 defines a block as a list of statements. A function declaration is not a statement.  
   
 // bad  
 if (currentUser) {  
@@ -1143,7 +1143,7 @@ if (currentUser) {
   
 -------------
   
-// 2. Never name a parameter arguments. This will take precedence over the arguments object that is given to every function scope.  
+### Never name a parameter arguments. This will take precedence over the arguments object that is given to every function scope.  
   
 // bad  
 function foo(name, options, arguments) {  
@@ -1157,7 +1157,7 @@ function foo(name, options, args) {
   
 -------------
   
-// 3. Never use arguments, opt to use rest syntax ... instead. eslint: prefer-rest-params  
+### Never use arguments, opt to use rest syntax ... instead. eslint: prefer-rest-params  
   
 // Why? ... is explicit about which arguments you want pulled. Plus, rest arguments are a real Array, and not merely Array-like like arguments.  
   
@@ -1174,7 +1174,7 @@ function concatenateAll(...args) {
   
 -------------
   
-// 4. Use default parameter syntax rather than mutating function arguments.  
+### Use default parameter syntax rather than mutating function arguments.  
   
 // really bad  
 function handleThings(opts) {  
@@ -1197,7 +1197,7 @@ function handleThings(opts = {}) {
   
 -------------
   
-// 5 Avoid confusing arrow function syntax (=>) with comparison operators (<=, >=). eslint: no-confusing-arrow  
+### Avoid confusing arrow function syntax (=>) with comparison operators (<=, >=). eslint: no-confusing-arrow  
   
 // bad  
 const itemHeight = item => item.height > 256 ? item.largeSize : item.smallSize;  
@@ -1207,7 +1207,7 @@ const itemHeight = item => (item.height > 256 ? item.largeSize : item.smallSize)
   
 -------------
   
-// 6. Never reassign parameters. eslint: no-param-reassign  
+### Never reassign parameters. eslint: no-param-reassign  
   
 // Why? Reassigning parameters can lead to unexpected behavior, especially when accessing the arguments object. It can also cause optimization issues, especially in V8.  
   
@@ -1234,7 +1234,7 @@ function f4(a = 1) {
   
 -------------
   
-// 7. Never mutate parameters. eslint: no-param-reassign  
+### Never mutate parameters. eslint: no-param-reassign  
   
 // Why? Manipulating objects passed in as parameters can cause unwanted variable side effects in the original caller.  
   
@@ -1250,7 +1250,7 @@ function f2(obj) {
   
 -------------
   
-// 8. Never use the Function constructor to create a new function. eslint: no-new-func  
+### Never use the Function constructor to create a new function. eslint: no-new-func  
   
 // Why? Creating a function in this way evaluates a string similarly to eval(), which opens vulnerabilities.  
   
@@ -1278,7 +1278,7 @@ function createMenu({ title, body, buttonText, cancellable }) {
   
 -------------
   
-// 2. Functions should do one thing  
+### Functions should do one thing  
   
 function emailClients(clients) {  
   clients.forEach((client) => {  
@@ -1302,7 +1302,7 @@ function isActiveClient(client) {
   
 ------------- 
   
-// 3. Function names should say what they do  
+### Function names should say what they do  
   
 function addToDate(date, month) {  
   // ...  
@@ -1324,7 +1324,7 @@ addMonthToDate(1, date);
   
 -------------
   
-// 4. Set default objects with Object.assign  
+### Set default objects with Object.assign  
   
 const menuConfig = {  
   title: null,  
@@ -1366,7 +1366,7 @@ createMenu(menuConfig);
   
 -------------
   
-// 5. Don't use flags as function parameters  
+### Don't use flags as function parameters  
   
 /*   
   Flags tell your user that this function does more than one thing.   
@@ -1392,7 +1392,7 @@ function createTempFile(name) {
   
 ------------- 
   
-// 6. Avoid Side Effects  
+### Avoid Side Effects  
   
 // Global variable referenced by following function.  
 // If we had another function that used this name, now it'd be an array and it could break it.  
@@ -2493,6 +2493,6 @@ const writeChangedDataToFs = getData(db);
 
 writeChangedDataToFs();
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3NDI2NDA3ODcsMTgwNjA4OTA0Myw1Mj
+eyJoaXN0b3J5IjpbLTE4NTEyNDY3NjMsMTgwNjA4OTA0Myw1Mj
 AxMjA0ODAsMTUyMTk3ODg4M119
 -->
