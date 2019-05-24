@@ -1207,14 +1207,14 @@ function concatenateAll(...args) {
   
 ### Use default parameter syntax rather than mutating function arguments.  
   
-// really bad  
+#### Really bad
 function handleThings(opts) {  
   // No! We shouldn’t mutate function arguments.  
  // Double bad: if opts is falsy it'll be set to an object which may // be what you want but it can introduce subtle bugs.  opts = opts || {};  
   // ...  
 }  
   
-// still bad  
+#### Still bad  
 function handleThings(opts) {  
   if (opts === void 0) {  
   opts = {};  
@@ -1230,7 +1230,7 @@ function handleThings(opts = {}) {
   
 ### Avoid confusing arrow function syntax (=>) with comparison operators (<=, >=). eslint: no-confusing-arrow  
   
-// bad  
+#### Bad 
 const itemHeight = item => item.height > 256 ? item.largeSize : item.smallSize;  
   
 // good  
@@ -1242,7 +1242,7 @@ const itemHeight = item => (item.height > 256 ? item.largeSize : item.smallSize)
   
 // Why? Reassigning parameters can lead to unexpected behavior, especially when accessing the arguments object. It can also cause optimization issues, especially in V8.  
   
-// bad  
+#### Bad
 function f1(a) {  
   a = 1;  
   // ...  
@@ -1270,7 +1270,7 @@ function f4(a = 1) {
   
 // Why? Manipulating objects passed in as parameters can cause unwanted variable side effects in the original caller.  
   
-// bad  
+#### Bad
 function f1(obj) {  
   obj.key = 1;  
 }  
@@ -1287,7 +1287,7 @@ function f2(obj) {
   
 // Why? Creating a function in this way evaluates a string similarly to eval(), which opens vulnerabilities.  
   
-// bad  
+#### Bad
 var add = new Function('a', 'b', 'return a + b');  
   
 // still bad  
@@ -1297,6 +1297,7 @@ var subtract = Function('a', 'b', 'return a - b');
 
 ## Functions  
   
+#### Bad  
 // 1. Function arguments (2 or fewer ideally)  
   
 function createMenu(title, body, buttonText, cancellable) {  
@@ -1312,7 +1313,9 @@ function createMenu({ title, body, buttonText, cancellable }) {
 -------------
   
 ### Functions should do one thing  
-  
+
+#### Bad
+
 function emailClients(clients) {  
   clients.forEach((client) => {  
   const clientRecord = database.lookup(client);  
@@ -1336,7 +1339,9 @@ function isActiveClient(client) {
 ------------- 
   
 ### Function names should say what they do  
-  
+
+#### Bad
+ 
 function addToDate(date, month) {  
   // ...  
 }  
@@ -1358,7 +1363,9 @@ addMonthToDate(1, date);
 -------------
   
 ### Set default objects with Object.assign  
-  
+
+#### Bad
+
 const menuConfig = {  
   title: null,  
   body: 'Bar',  
@@ -1405,7 +1412,9 @@ createMenu(menuConfig);
   Flags tell your user that this function does more than one thing.   
   Functions should do one thing. Split out your functions if they are following different code paths based on a boolean.  
 */  
-  
+
+#### Bad
+
 function createFile(name, temp) {  
   if (temp) {  
   fs.create(`./temp/${name}`);  
@@ -1426,7 +1435,8 @@ function createTempFile(name) {
 ------------- 
   
 ### Avoid Side Effects  
-  
+
+#### Bad
 // Global variable referenced by following function.  
 // If we had another function that used this name, now it'd be an array and it could break it.  
 let name = 'Ryan McDermott';  
@@ -1454,7 +1464,9 @@ console.log(newName); // ['Ryan', 'McDermott'];
 -------------
   
 ### Avoid Side Effects v.2  
-  
+
+#### Bad
+
 const addItemToCart = (cart, item) => {  
   cart.push({ item, date: Date.now() });  
 };  
@@ -1468,7 +1480,9 @@ const addItemToCart = (cart, item) => {
 -------------
   
 ### Don't write to global functions  
-  
+
+#### Bad
+
 Array.prototype.diff = function diff(comparisonArray) {  
   const hash = new Set(comparisonArray);  
   return this.filter(elem => !hash.has(elem));  
@@ -2505,6 +2519,6 @@ const writeChangedDataToFs = getData(db);
 
 writeChangedDataToFs();
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzMxNjI0MjU0LDE4MDYwODkwNDMsNTIwMT
+eyJoaXN0b3J5IjpbOTYyOTQ4NTgwLDE4MDYwODkwNDMsNTIwMT
 IwNDgwLDE1MjE5Nzg4ODNdfQ==
 -->
