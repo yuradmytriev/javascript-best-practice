@@ -1733,90 +1733,94 @@ account.balance = 100;
 #### Good 
 
 ```js  
-function makeBankAccount() {  
+function makeBankAccount() {
   // this one is private  
-  let balance = 0;  
-  
+  let balance = 0;
+
   // a "getter", made public via the returned object below  
-  function getBalance() {  
-  return balance;  
- }  
+  function getBalance() {
+    return balance;
+  }
   // a "setter", made public via the returned object below  
-  function setBalance(amount) {  
-  // ... validate before updating the balance  
-  balance = amount;  
- }  
-  return {  
-  // ...  
-  getBalance,  
-  setBalance,  
- };}  
-  
-const account = makeBankAccount();  
-account.setBalance(100);  
+  function setBalance(amount) {
+    // ... validate before updating the balance  
+    balance = amount;
+  }
+  return {
+    // ...  
+    getBalance,
+    setBalance,
+  };
+}
+
+const account = makeBankAccount();
+account.setBalance(100); 
 ```
 
 -------------
   
 ### Use method chaining  
+
+#### Bad 
+
+```js
+class Car {
+  constructor(make, model, color) {
+    this.make = make;
+    this.model = model;
+    this.color = color;
+  }
+  setMake(make) {
+    this.make = make;
+  }
+  setModel(model) {
+    this.model = model;
+  }
+  setColor(color) {
+    this.color = color;
+  }
+  save() {
+    console.log(this.make, this.model, this.color);
+  }
+}
+
+const car = new Car('Ford', 'F-150', 'red');
+car.setColor('pink');
+car.save(); 
+```
   
-class Car {  
-  constructor(make, model, color) {  
-  this.make = make;  
-  this.model = model;  
-  this.color = color;  
- }  
-  setMake(make) {  
-  this.make = make;  
- }  
-  setModel(model) {  
-  this.model = model;  
- }  
-  setColor(color) {  
-  this.color = color;  
- }  
-  save() {  
-  console.log(this.make, this.model, this.color);  
- }}  
-  
-const car = new Car('Ford', 'F-150', 'red');  
-car.setColor('pink');  
-car.save();  
-  
-// ->  
-  
-class Car {  
-  constructor(make, model, color) {  
-  this.make = make;  
-  this.model = model;  
-  this.color = color;  
- }  
-  setMake(make) {  
-  this.make = make;  
-  // NOTE: Returning this for chaining  
-  return this;  
- }  
-  setModel(model) {  
-  this.model = model;  
-  // NOTE: Returning this for chaining  
-  return this;  
- }  
-  setColor(color) {  
-  this.color = color;  
-  // NOTE: Returning this for chaining  
-  return this;  
- }  
-  save() {  
-  console.log(this.make, this.model, this.color);  
-  // NOTE: Returning this for chaining  
-  return this;  
- }}  
-  
-const car = new Car('Ford', 'F-150', 'red')  
- .setColor('pink')  
- .save();  
-  
-  
+#### Good 
+
+```js
+class Car {
+  constructor(make, model, color) {
+    this.make = make;
+    this.model = model;
+    this.color = color;
+  }
+  setMake(make) {
+    this.make = make;
+    return this;
+  }
+  setModel(model) {
+    this.model = model;
+    return this;
+  }
+  setColor(color) {
+    this.color = color; 
+    return this;
+  }
+  save() {
+    console.log(this.make, this.model, this.color);
+    return this;
+  }
+}
+
+const car = new Car('Ford', 'F-150', 'red')
+  .setColor('pink')
+  .save();  
+```
+
 -------------
   
 ### Prefer composition over inheritance  
@@ -2586,7 +2590,7 @@ const writeChangedDataToFs = getData(db);
 
 writeChangedDataToFs();
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTU5MzkwMDQ5MCwxNzY4OTgzNDI3LC0xMD
-Y5MDA3NDUzLDE4MDYwODkwNDMsNTIwMTIwNDgwLDE1MjE5Nzg4
-ODNdfQ==
+eyJoaXN0b3J5IjpbLTE5MDgyNzAyMDEsMTc2ODk4MzQyNywtMT
+A2OTAwNzQ1MywxODA2MDg5MDQzLDUyMDEyMDQ4MCwxNTIxOTc4
+ODgzXX0=
 -->
