@@ -1197,7 +1197,7 @@ function foo(name, options, args) {}
   
 ### Never use arguments, opt to use rest syntax ... instead. eslint: prefer-rest-params  
   
-// Why? ... is explicit about which arguments you want pulled. Plus, rest arguments are a real Array, and not merely Array-like like arguments.  
+Why? ... is explicit about which arguments you want pulled. Plus, rest arguments are a real Array, and not merely Array-like like arguments.  
   
 #### Bad
 
@@ -1265,7 +1265,7 @@ const itemHeight = item => (item.height > 256 ? item.largeSize : item.smallSize)
   
 ### Never reassign parameters. eslint: no-param-reassign  
   
-// Why? Reassigning parameters can lead to unexpected behavior, especially when accessing the arguments object. It can also cause optimization issues, especially in V8.  
+Why? Reassigning parameters can lead to unexpected behavior, especially when accessing the arguments object. It can also cause optimization issues, especially in V8.  
   
 #### Bad
 
@@ -1293,7 +1293,7 @@ function f4(a = 1) {}
   
 ### Never mutate parameters. eslint: no-param-reassign  
   
-// Why? Manipulating objects passed in as parameters can cause unwanted variable side effects in the original caller.  
+Why? Manipulating objects passed in as parameters can cause unwanted variable side effects in the original caller.  
   
 #### Bad
 
@@ -1315,7 +1315,7 @@ function f2(obj) {
   
 ### Never use the Function constructor to create a new function. eslint: no-new-func  
   
-// Why? Creating a function in this way evaluates a string similarly to eval(), which opens vulnerabilities.  
+Why? Creating a function in this way evaluates a string similarly to eval(), which opens vulnerabilities.  
   
 #### Bad
 
@@ -1454,11 +1454,8 @@ createMenu(menuConfig);
 -------------
   
 ### Don't use flags as function parameters  
-  
-/*   
-  Flags tell your user that this function does more than one thing.   
-  Functions should do one thing. Split out your functions if they are following different code paths based on a boolean.  
-*/  
+
+Flags tell your user that this function does more than one thing.  Functions should do one thing. Split out your functions if they are following different code paths based on a boolean.
 
 #### Bad
 
@@ -1488,8 +1485,8 @@ function createTempFile(name) {
 ### Avoid Side Effects  
 
 #### Bad
-// Global variable referenced by following function.  
-// If we had another function that used this name, now it'd be an array and it could break it.  
+
+Global variable referenced by following function.  If we had another function that used this name, now it'd be an array and it could break it.  
 
 ```js
 let name = 'Ryan McDermott';  
@@ -1605,11 +1602,7 @@ if (isDOMNodePresent(node)) {}
   
 ### Avoid conditionals  
 
-This seems like an impossible task. Upon first hearing this, most people say,  "how am I supposed to do anything without an if statement?" The answer is that   
-  you can use polymorphism to achieve the same task in many cases. The second question   
-  is usually, "well that's great but why would I want to do that?" The answer is   
-  a previous clean code concept we learned: a function should only do one thing.  
- When you have classes and functions that have if statements, you are telling your user that your  function does more than one thing. Remember, just do one thing.
+This seems like an impossible task. Upon first hearing this, most people say,  "how am I supposed to do anything without an if statement?" The answer is that  you can use polymorphism to achieve the same task in many cases. The second question is usually, "well that's great but why would I want to do that?" The answer is a previous clean code concept we learned: a function should only do one thing. When you have classes and functions that have if statements, you are telling your user that your  function does more than one thing. Remember, just do one thing.
 
 #### Bad
  
@@ -2589,7 +2582,7 @@ const writeChangedDataToFs = getData(db);
 
 writeChangedDataToFs();
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjA1NDI1ODM1LDE3Njg5ODM0MjcsLTEwNj
-kwMDc0NTMsMTgwNjA4OTA0Myw1MjAxMjA0ODAsMTUyMTk3ODg4
-M119
+eyJoaXN0b3J5IjpbLTE3MDMxOTY1NzUsMTc2ODk4MzQyNywtMT
+A2OTAwNzQ1MywxODA2MDg5MDQzLDUyMDEyMDQ4MCwxNTIxOTc4
+ODgzXX0=
 -->
