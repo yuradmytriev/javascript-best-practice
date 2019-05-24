@@ -1103,43 +1103,53 @@ locations.forEach((location) => {
 -------------
   
 ### Don't add unneeded context  
- 
-const Car = {  
-  carMake: 'Honda',  
-  carModel: 'Accord',  
-  carColor: 'Blue'  
-};  
-  
-function paintCar(car) {  
-  car.carColor = 'Red';  
-}  
+
+#### Bad
+
+```js
+const Car = {
+  carMake: 'Honda',
+  carModel: 'Accord',
+  carColor: 'Blue'
+};
+
+function paintCar(car) {
+  car.carColor = 'Red';
+}
+```
   
 #### Good
-  
-const Car = {  
-  make: 'Honda',  
-  model: 'Accord',  
-  color: 'Blue'  
-};  
-  
-function paintCar(car) {  
-  car.color = 'Red';  
+
+```js
+const Car = {
+  make: 'Honda',
+  model: 'Accord',
+  color: 'Blue'
+};
+
+function paintCar(car) {
+  car.color = 'Red';
 }
+```
 
 -----------------
 
 ### Use default arguments instead of short circuiting or conditionals  
-  
+
+#### Bad
+
+```js
 function createMicrobrewery(name) {  
   const breweryName = name || 'Hipster Brew Co.';  
   // ...  
-}  
-  
-// ->  
-  
-function createMicrobrewery(name = 'Hipster Brew Co.') {  
-  // ...  
 }
+```
+  
+#### Good
+
+```js
+function createMicrobrewery(name = 'Hipster Brew Co.') {}
+```
 
 ------------
 
@@ -2491,6 +2501,6 @@ const writeChangedDataToFs = getData(db);
 
 writeChangedDataToFs();
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExOTAyODQ5NTYsMTgwNjA4OTA0Myw1Mj
-AxMjA0ODAsMTUyMTk3ODg4M119
+eyJoaXN0b3J5IjpbLTYyNDQ5MTg3MCwxODA2MDg5MDQzLDUyMD
+EyMDQ4MCwxNTIxOTc4ODgzXX0=
 -->
