@@ -1076,8 +1076,25 @@ function paintCar(car) {
   car.color = 'Red';  
 }
 
--
+-----------------
+
+// 7. Use default arguments instead of short circuiting or conditionals  
+  
+function createMicrobrewery(name) {  
+  const breweryName = name || 'Hipster Brew Co.';  
+  // ...  
+}  
+  
+// ->  
+  
+function createMicrobrewery(name = 'Hipster Brew Co.') {  
+  // ...  
+}
+
+------------
+
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTQ2NDAwMTIwLDE4MDYwODkwNDMsNTIwMT
-IwNDgwLDE1MjE5Nzg4ODNdfQ==
+eyJoaXN0b3J5IjpbMTUzNTE2MDY0MiwxODA2MDg5MDQzLDUyMD
+EyMDQ4MCwxNTIxOTc4ODgzXX0=
 -->
