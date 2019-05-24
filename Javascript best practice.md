@@ -966,6 +966,34 @@ var allChords = new Set();
  
 chords.forEach(chord => allChords.add(chord));
 ```
+
+-----------------
+
+// 2. optimize cycle  
+  
+for (let i = 0; i <= 10; i++) {  
+  if (i === 5) {  
+  break;  
+ }  console.log(i);  
+}
+
+-----------------------
+
+// 1. Don't over-optimize  
+  
+// Bad:  
+  
+// On old browsers, each iteration with uncached `list.length` would be costly  
+// because of `list.length` recomputation. In modern browsers, this is optimized.  
+for (let i = 0, len = list.length; i < len; i++) {  
+  // ...  
+}  
+// Good:  
+  
+for (let i = 0; i < list.length; i++) {  
+  // ...  
+}
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTIwMTIwNDgwLDE1MjE5Nzg4ODNdfQ==
+eyJoaXN0b3J5IjpbLTE3MDc3NTk3NTYsNTIwMTIwNDgwLDE1Mj
+E5Nzg4ODNdfQ==
 -->
