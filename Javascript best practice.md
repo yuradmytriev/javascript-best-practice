@@ -1420,7 +1420,7 @@ console.log(newName); // ['Ryan', 'McDermott'];
   
 -------------
   
-// 7. Avoid Side Effects v.2  
+### Avoid Side Effects v.2  
   
 const addItemToCart = (cart, item) => {  
   cart.push({ item, date: Date.now() });  
@@ -1434,7 +1434,7 @@ const addItemToCart = (cart, item) => {
   
 -------------
   
-// 8. Don't write to global functions  
+### Don't write to global functions  
   
 Array.prototype.diff = function diff(comparisonArray) {  
   const hash = new Set(comparisonArray);  
@@ -1451,7 +1451,7 @@ class SuperArray extends Array {
   
 -------------
   
-// 9. Don't write to global functions  
+### Don't write to global functions  
   
 if (fsm.state === 'fetching' && isEmpty(listNode)) {  
   // ...  
@@ -1469,7 +1469,7 @@ if (shouldShowSpinner(fsmInstance, listNodeInstance)) {
   
 -------------
   
-// 10. Avoid negative conditionals  
+### Avoid negative conditionals  
   
 function isDOMNodeNotPresent(node) {  
   // ...  
@@ -1491,7 +1491,7 @@ if (isDOMNodePresent(node)) {
   
 -------------
   
-// 10. Avoid conditionals  
+### Avoid conditionals  
   
 /*  
  This seems like an impossible task. Upon first hearing this, most people say,  "how am I supposed to do anything without an if statement?" The answer is that   
@@ -1539,7 +1539,7 @@ class Cessna extends Airplane {
   
 -------------
   
-// 11. Don't over-optimize  
+### Don't over-optimize  
   
 // On old browsers, each iteration with uncached `list.length` would be costly  
 // because of `list.length` recomputation. In modern browsers, this is optimized.  
@@ -1644,7 +1644,7 @@ account.setBalance(100);
   
 -------------
   
-// 2. Use method chaining  
+### Use method chaining  
   
 class Car {  
   constructor(make, model, color) {  
@@ -1705,7 +1705,7 @@ const car = new Car('Ford', 'F-150', 'red')
   
 -------------
   
-// 2. Prefer composition over inheritance  
+### Prefer composition over inheritance  
   
 /*  
 As stated famously in Design Patterns by the Gang of Four, you should prefer composition over inheritance where you can.  
@@ -1760,7 +1760,7 @@ class Employee {
   
 -------------
   
-// A fast half sum:  
+### A fast half sum:  
   
 const hight = 555555555;  
 const low = 222222222;  
@@ -1769,17 +1769,11 @@ const mid = Math.floor(low + ((hight - low) / 2)); // it`s better
 
 ---------------
 
-1.
--------------------------------------------------------
-
 Bad: setTimeout(blastOff, 86400000);
 Good:
 const MILLISECONDS_IN_A_DAY = 86400000;
 setTimeout(blastOff, MILLISECONDS_IN_A_DAY);
 
--------------------------------------------------------
-
-2.
 -------------------------------------------------------
 
 Bad:  car.carColor = 'Red';
@@ -1790,10 +1784,9 @@ Good: car.color = 'Red';
 Bad: const createMicrobrewery = name =>  const breweryName = name || 'Hipster Brew Co.';
 Good: const createMicrobrewery = (breweryName = 'Hipster Brew Co.') => {}
 
-4.
--------------------------------------------------------------
+--------------
 
-Encapsulate conditionals
+### Encapsulate conditionals
 
 Bad: if (fsm.state === 'fetching') {}
 Good:
@@ -1848,19 +1841,19 @@ doc.getElementByld('go-btn')
 
 --------------------------------------------------------------
 
-9. Mark optional parameters via the parameter default value `undefined`
+### Mark optional parameters via the parameter default value `undefined`
 
 function foo(optional = undefined) { ··· }
 
 --------------------------------------------------------------
 
-10. Mark required parameters via a function that throws an exception
+### Mark required parameters via a function that throws an exception
 
 function foo(required = throwException()) { ··· }
 
 --------------------------------------------------------------
 
-11. Enforcing a maximum arity (variant 1 of 2)
+### Enforcing a maximum arity (variant 1 of 2)
 
   function f(x, y, ...empty) { // max arity: 2
       if (empty.length > 0) {
@@ -1870,7 +1863,7 @@ function foo(required = throwException()) { ··· }
 
 --------------------------------------------------------------
 
-12. Normalize variable
+### Normalize variable
 
 const hasEitherClass = (element, classNamel, className2) =>
    element.className == classNamel || element.className == className2;
@@ -1885,7 +1878,7 @@ const hasEitherClass = (element, classNamel, className2) => {
 
 --------------------------------------------------------------
 
-13. refactoring
+### refactoring
 
   const getItem = () => {
     const item = myStorage.getItem('customKey');
@@ -1905,7 +1898,7 @@ const hasEitherClass = (element, classNamel, className2) => {
 
 --------------------------------------------------------------  
 
-14. Для parseInt всегда определять систему исчесления
+### Для parseInt всегда определять систему исчесления
 
 --------------------------------------------------------------
 
@@ -2493,6 +2486,6 @@ const writeChangedDataToFs = getData(db);
 
 writeChangedDataToFs();
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4NTEyNDY3NjMsMTgwNjA4OTA0Myw1Mj
-AxMjA0ODAsMTUyMTk3ODg4M119
+eyJoaXN0b3J5IjpbLTEzODY2NDQzLDE4MDYwODkwNDMsNTIwMT
+IwNDgwLDE1MjE5Nzg4ODNdfQ==
 -->
