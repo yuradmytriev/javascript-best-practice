@@ -2177,7 +2177,8 @@ labelProbabilities[label] = labelCounts[label] / numberOfSongs;
 
 ----------------------------------------------------------------
 
-// bad
+#### Bad 
+
 const legthOfArray = array.length; // this case don`t need explanation
 
 #### Good
@@ -2188,7 +2189,8 @@ const isWidthResizeable = width !== null; // but this need
 
 ### Methods can return this to help with method chaining.
 
-// bad
+#### Bad 
+
 Jedi.prototype.jump = function () {
   this.jumping = true;
   return true;
@@ -2227,7 +2229,8 @@ luke.jump()
 
 Why? This makes sure you have a single default export.
 
-// bad
+#### Bad 
+
 import * as AirbnbStyleGuide from './AirbnbStyleGuide';
 
 #### Good
@@ -2240,13 +2243,12 @@ import AirbnbStyleGuide from './AirbnbStyleGuide';
 
 Why? Although the one-liner is concise, having one clear way to import and one clear way to export makes things consistent.
 
-// bad
-// filename es6.js
+#### Bad 
+
 export { es6 as default } from './AirbnbStyleGuide';
 
 #### Good
 
-// filename es6.js
 import { es6 } from './AirbnbStyleGuide';
 export default es6;
 
@@ -2256,7 +2258,7 @@ export default es6;
 
 Why? Having multiple lines that import from the same path can make code harder to maintain.
 
-// bad
+#### Bad 
 import foo from 'foo';
 // … some other imports … //
 import { named1, named2 } from 'foo';
@@ -2278,7 +2280,7 @@ import foo, {
 
 Why? To encourage more files that only ever export one thing, which is better for readability and maintainability.
 
-// bad
+#### Bad 
 export function foo() {}
 
 #### Good
@@ -2291,7 +2293,7 @@ export default function foo() {}
 
 Why? The curly braces follow the same indentation rules as every other curly brace block in the style guide, as do the trailing commas.
 
-// bad
+#### Bad 
 import {longNameA, longNameB, longNameC, longNameD, longNameE} from 'path';
 
 #### Good
@@ -2310,12 +2312,12 @@ import {
 
 Why? It’s easier to add new variable declarations this way, and you never have to worry about swapping out a ; for a , or introducing punctuation-only diffs. You can also step through each declaration with the debugger, instead of jumping through all of them at once.
 
-// bad
+#### Bad 
 const items = getItems(),
     goSportsTeam = true,
     dragonball = 'z';
 
-// bad
+#### Bad 
 // (compare to above, and try to spot the mistake)
 const items = getItems(),
     goSportsTeam = true;
@@ -2342,7 +2344,7 @@ also cause unexpected behavior in your programs.
 
 ### Avoid unneeded ternary statements. eslint: no-unneeded-ternary
 
-// bad
+#### Bad 
 const foo = a ? a : b;
 const bar = c ? true : false;
 const baz = c ? false : true;
@@ -2361,7 +2363,7 @@ const baz = !c;
 
 ### Do not pad your blocks with blank lines. eslint: padded-blocks
 
-// bad
+#### Bad 
 function bar() {
 
   console.log(foo);
@@ -2369,6 +2371,7 @@ function bar() {
 }
 
 #### Good
+
 function bar() {
   console.log(foo);
 }
@@ -2382,7 +2385,8 @@ function bar( foo ) {
   return foo;
 }
 
-// good
+#### Good
+
 if (foo) {
   console.log(foo);
 }
@@ -2394,7 +2398,8 @@ if (foo) {
 // bad
 const foo = {clark: 'kent'};
 
-// good
+#### Good
+
 const foo = { clark: 'kent' };
 
 ---------------------------------------
@@ -2408,7 +2413,7 @@ this.__firstName__ = 'Panda';
 this.firstName_ = 'Panda';
 this._firstName = 'Panda';
 
-// good
+#### Good
 this.firstName = 'Panda';
 
 // good, in environments where WeakMaps are available
@@ -2481,7 +2486,7 @@ class PerformanceReview {
 const review = new PerformanceReview(employee);
 review.perfReview();
 
-Good:
+#### Good
 
 class PerformanceReview {
     constructor(employee) {
@@ -2642,7 +2647,7 @@ const writeChangedDataToFs = getData(db);
 
 writeChangedDataToFs();
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwOTA0MTcxNTUsLTg3NDE4MDgyLDE3Nj
-g5ODM0MjcsLTEwNjkwMDc0NTMsMTgwNjA4OTA0Myw1MjAxMjA0
-ODAsMTUyMTk3ODg4M119
+eyJoaXN0b3J5IjpbMTI2Njk3NjU5NywtODc0MTgwODIsMTc2OD
+k4MzQyNywtMTA2OTAwNzQ1MywxODA2MDg5MDQzLDUyMDEyMDQ4
+MCwxNTIxOTc4ODgzXX0=
 -->
