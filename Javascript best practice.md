@@ -1184,15 +1184,14 @@ if (currentUser) {
 #### Bad
 
 ```js
-function foo(name, options, arguments) {  
-  // ...  
-}  
+function foo(name, options, arguments) {}
 ```
   
 #### Good
-function foo(name, options, args) {  
-  // ...  
-}  
+
+```js
+function foo(name, options, args) {}
+```
   
 -------------
   
@@ -1202,26 +1201,34 @@ function foo(name, options, args) {
   
 #### Bad
 
+```js
 function concatenateAll() {  
   const args = Array.prototype.slice.call(arguments);  
   return args.join('');  
-}  
+}
+```
   
 #### Good
+
+```js
 function concatenateAll(...args) {  
   return args.join('');  
-}  
+}
+```
   
 -------------
   
 ### Use default parameter syntax rather than mutating function arguments.  
   
 #### Really bad
+
+```js
 function handleThings(opts) {  
   // No! We shouldn’t mutate function arguments.  
  // Double bad: if opts is falsy it'll be set to an object which may // be what you want but it can introduce subtle bugs.  opts = opts || {};  
   // ...  
-}  
+}
+```
   
 #### Still bad  
 function handleThings(opts) {  
@@ -2532,6 +2539,6 @@ const writeChangedDataToFs = getData(db);
 
 writeChangedDataToFs();
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQ3OTQ5NTE3OSwxODA2MDg5MDQzLDUyMD
-EyMDQ4MCwxNTIxOTc4ODgzXX0=
+eyJoaXN0b3J5IjpbLTEwNjkwMDc0NTMsMTgwNjA4OTA0Myw1Mj
+AxMjA0ODAsMTUyMTk3ODg4M119
 -->
