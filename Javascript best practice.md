@@ -1490,6 +1490,8 @@ function createTempFile(name) {
 #### Bad
 // Global variable referenced by following function.  
 // If we had another function that used this name, now it'd be an array and it could break it.  
+
+```js
 let name = 'Ryan McDermott';  
   
 function splitIntoFirstAndLastName() {  
@@ -1499,9 +1501,11 @@ function splitIntoFirstAndLastName() {
 splitIntoFirstAndLastName();  
   
 console.log(name); // ['Ryan', 'McDermott'];  
+```
   
 #### Good
-  
+
+```js
 function splitIntoFirstAndLastName(name) {  
   return name.split(' ');  
 }  
@@ -1511,22 +1515,27 @@ const newName = splitIntoFirstAndLastName(name);
   
 console.log(name); // 'Ryan McDermott';  
 console.log(newName); // ['Ryan', 'McDermott'];  
-  
+```
+
 -------------
   
 ### Avoid Side Effects v.2  
 
 #### Bad
 
+```js
 const addItemToCart = (cart, item) => {  
   cart.push({ item, date: Date.now() });  
 };  
+```
   
 #### Good
   
+```js
 const addItemToCart = (cart, item) => {  
   return [...cart, { item, date: Date.now() }];  
 };  
+```
   
 -------------
   
@@ -1534,10 +1543,12 @@ const addItemToCart = (cart, item) => {
 
 #### Bad
 
+```js
 Array.prototype.diff = function diff(comparisonArray) {  
   const hash = new Set(comparisonArray);  
   return this.filter(elem => !hash.has(elem));  
 };  
+```
   
 #### Good
   
@@ -2574,6 +2585,7 @@ const writeChangedDataToFs = getData(db);
 
 writeChangedDataToFs();
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTc2ODk4MzQyNywtMTA2OTAwNzQ1MywxOD
-A2MDg5MDQzLDUyMDEyMDQ4MCwxNTIxOTc4ODgzXX0=
+eyJoaXN0b3J5IjpbNTM4NTMwMTk0LDE3Njg5ODM0MjcsLTEwNj
+kwMDc0NTMsMTgwNjA4OTA0Myw1MjAxMjA0ODAsMTUyMTk3ODg4
+M119
 -->
