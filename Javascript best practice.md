@@ -889,15 +889,21 @@ if (!valid) {
 ### Do not prepend  `Error:` to error messages, or any similar label.
 
 #### Bad
+
+```js
 const err = new Error('ValidationError: Result is not valid');
 console.error(err.toString());
-// => Error: ValidationError: Result is not valid
+
+```
 
 #### Good
+
+```js
 const err = new Error('Result is not valid');
 err.name = 'ValidationError';
 console.error(err.toString());
 // => ValidationError: Result is not valid
+```
 
 --------------
 
@@ -908,21 +914,26 @@ Use a single object parameter and destructuring assignment instead. It also make
 #### Bad
 
 ```js
-function getRegisteredUsers (fields, include, fromDate, toDate) { /* implementation */ }
+function getRegisteredUsers(fields, include, fromDate, toDate) {}
 getRegisteredUsers(['firstName', 'lastName', 'email'], ['invitedUsers'], '2016-09-26', '2016-12-13')
 ```
 
 #### Good
 
 ```js
-function getRegisteredUsers ({ fields, include, fromDate, toDate }) {
-return getRegisteredUsers({
+function getRegisteredUsers({
+  fields,
+  include,
+  fromDate,
+  toDate
+});
+
+getRegisteredUsers({
   fields: ['firstName', 'lastName', 'email'],
   include: ['invitedUsers'],
   fromDate: '2016-09-26',
   toDate: '2016-12-13'
-})
-}
+});
 ```
 
 ----------------
@@ -2470,6 +2481,6 @@ const writeChangedDataToFs = getData(db);
 
 writeChangedDataToFs();
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTE3NTkxOTYzLDE4MDYwODkwNDMsNTIwMT
+eyJoaXN0b3J5IjpbNjY3MzA4MzEzLDE4MDYwODkwNDMsNTIwMT
 IwNDgwLDE1MjE5Nzg4ODNdfQ==
 -->
