@@ -915,13 +915,14 @@ getRegisteredUsers(['firstName', 'lastName', 'email'], ['invitedUsers'], '2016-0
 #### Good
 
 ```js
-function getRegisteredUsers ({ fields, include, fromDate, toDate }) { /* implementation */ }
-getRegisteredUsers({
+function getRegisteredUsers ({ fields, include, fromDate, toDate }) {
+return getRegisteredUsers({
   fields: ['firstName', 'lastName', 'email'],
   include: ['invitedUsers'],
   fromDate: '2016-09-26',
   toDate: '2016-12-13'
 })
+}
 ```
 
 ----------------
@@ -952,11 +953,13 @@ saveCityZipCode(city, zipCode);
 #### Bad
 
 ```js  
-var allChords = []; 
-chords.forEach(chord => {  
-  if (!allChords.includes(chord)) {  
-  allChords.push(chord);  
- }});  
+var allChords = [];
+
+chords.forEach(chord => {
+  if (!allChords.includes(chord)) {
+    allChords.push(chord);
+  }
+}); 
 ```
 
 #### Good
@@ -970,12 +973,16 @@ chords.forEach(chord => allChords.add(chord));
 -----------------
 
 ### Optimize loops. If you don't need all data looping use `break`. 
-  
-for (let i = 0; i <= 10; i++) {  
-  if (i === 5) {  
-  break;  
- }  console.log(i);  
+
+```js  
+for (let i = 0; i <= 10; i++) {
+  if (i === 5) {
+    break;
+  }
+  console.log(i);
 }
+
+```
 
 -----------------------
 
@@ -2463,6 +2470,6 @@ const writeChangedDataToFs = getData(db);
 
 writeChangedDataToFs();
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwNzUzOTg4NzgsMTgwNjA4OTA0Myw1Mj
-AxMjA0ODAsMTUyMTk3ODg4M119
+eyJoaXN0b3J5IjpbOTE3NTkxOTYzLDE4MDYwODkwNDMsNTIwMT
+IwNDgwLDE1MjE5Nzg4ODNdfQ==
 -->
