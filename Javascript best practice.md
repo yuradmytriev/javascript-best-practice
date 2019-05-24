@@ -1158,17 +1158,24 @@ function createMicrobrewery(name = 'Hipster Brew Co.') {}
   
 #### Bad
 
-if (currentUser) {  
-  function test() {  
-  console.log('Nope.');  
- }}  
+```js
+if (currentUser) {
+  function test() {
+    console.log('Nope.');
+  }
+}
+```
   
 #### Good
-let test;  
-if (currentUser) {  
-  test = () => {  
-  console.log('Yup.');  
- };}  
+
+```js
+let test;
+if (currentUser) {
+  test = () => {
+    console.log('Yup.');
+  };
+}
+```
   
 -------------
   
@@ -1176,9 +1183,11 @@ if (currentUser) {
   
 #### Bad
 
+```js
 function foo(name, options, arguments) {  
   // ...  
 }  
+```
   
 #### Good
 function foo(name, options, args) {  
@@ -1499,12 +1508,14 @@ class SuperArray extends Array {
 -------------
   
 ### Don't write to global functions  
-  
+
+#### Bad
+
 if (fsm.state === 'fetching' && isEmpty(listNode)) {  
   // ...  
 }  
   
-// ->  
+#### Good 
   
 function shouldShowSpinner(fsm, listNode) {  
   return fsm.state === 'fetching' && isEmpty(listNode);  
@@ -1517,7 +1528,9 @@ if (shouldShowSpinner(fsmInstance, listNodeInstance)) {
 -------------
   
 ### Avoid negative conditionals  
-  
+
+#### Bad
+
 function isDOMNodeNotPresent(node) {  
   // ...  
 }  
@@ -1526,7 +1539,7 @@ if (!isDOMNodeNotPresent(node)) {
   // ...  
 }  
   
-// ->  
+#### Good
   
 function isDOMNodePresent(node) {  
   // ...  
@@ -2519,6 +2532,6 @@ const writeChangedDataToFs = getData(db);
 
 writeChangedDataToFs();
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTYyOTQ4NTgwLDE4MDYwODkwNDMsNTIwMT
-IwNDgwLDE1MjE5Nzg4ODNdfQ==
+eyJoaXN0b3J5IjpbMTQ3OTQ5NTE3OSwxODA2MDg5MDQzLDUyMD
+EyMDQ4MCwxNTIxOTc4ODgzXX0=
 -->
