@@ -822,11 +822,11 @@ Promise.resolve()
 
 ```js
 $('#items')
-    .find('.selected')
-        .highlight()
-        .end()
-    .find('.open')
-        .updateCount();
+  .find('.selected')
+  .highlight()
+  .end()
+  .find('.open')
+  .updateCount();
 ```        
 
 #### Good
@@ -835,6 +835,7 @@ $('#items')
 const $items = $('#items');
 const $selected = $items.find('.selected');
 const $open = $items.find('.open');
+
 $selected.highlight();
 $open.updateCount();
 ```
@@ -846,20 +847,24 @@ $open.updateCount();
 #### Bad
 
 ```js
-const obj = { foo: 'bar' };
+const obj = {
+  foo: 'bar'
+};
 for (let key in obj) {
-    if (Object.prototype.hasOwnProperty.call(obj, key)) {
-        console.log(key, obj[key]);
-    }
+  if (Object.prototype.hasOwnProperty.call(obj, key)) {
+    console.log(key, obj[key]);
+  }
 }
 ```
 
 #### Good
 
 ```js
-const obj = { foo: 'bar' };
+const obj = {
+  foo: 'bar'
+};
 Object.keys(obj).forEach((key) => {
-    console.log(key, obj[key]);
+  console.log(key, obj[key]);
 });
 ```
 
@@ -871,7 +876,7 @@ Object.keys(obj).forEach((key) => {
 
 ```js
 if (!valid) {
-    throw 'Result is not valid';
+  throw 'Result is not valid';
 }
 ```
 
@@ -879,7 +884,7 @@ if (!valid) {
 
 ```js
 if (!valid) {
-    throw new Error('Result is not valid');
+  throw new Error('Result is not valid');
 }
 ```
 
@@ -893,7 +898,6 @@ if (!valid) {
 ```js
 const err = new Error('ValidationError: Result is not valid');
 console.error(err.toString());
-
 ```
 
 #### Good
@@ -902,7 +906,6 @@ console.error(err.toString());
 const err = new Error('Result is not valid');
 err.name = 'ValidationError';
 console.error(err.toString());
-// => ValidationError: Result is not valid
 ```
 
 --------------
@@ -2481,6 +2484,6 @@ const writeChangedDataToFs = getData(db);
 
 writeChangedDataToFs();
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjY3MzA4MzEzLDE4MDYwODkwNDMsNTIwMT
-IwNDgwLDE1MjE5Nzg4ODNdfQ==
+eyJoaXN0b3J5IjpbLTE5NjAxOTYzMTUsMTgwNjA4OTA0Myw1Mj
+AxMjA0ODAsMTUyMTk3ODg4M119
 -->
