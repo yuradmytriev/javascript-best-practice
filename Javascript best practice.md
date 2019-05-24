@@ -969,7 +969,7 @@ chords.forEach(chord => allChords.add(chord));
 
 -----------------
 
-// 2. optimize cycle  
+### Optimize loops. If you don't need all data looping use `break`. 
   
 for (let i = 0; i <= 10; i++) {  
   if (i === 5) {  
@@ -2463,6 +2463,6 @@ const writeChangedDataToFs = getData(db);
 
 writeChangedDataToFs();
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzQ2MzEyNzE3LDE4MDYwODkwNDMsNTIwMT
-IwNDgwLDE1MjE5Nzg4ODNdfQ==
+eyJoaXN0b3J5IjpbLTIwNzUzOTg4NzgsMTgwNjA4OTA0Myw1Mj
+AxMjA0ODAsMTUyMTk3ODg4M119
 -->
