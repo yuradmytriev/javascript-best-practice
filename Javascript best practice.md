@@ -1040,26 +1040,36 @@ const yearsMonthDay = moment.format('YYYY/MM/DD');
   
 #### Bad
 
-```  
-getUserData();  
+```js  
+getUserData(); 
+```
 
 #### Good  
+
+```js
 getUser();  
+```
   
 -------------
 
 ### No magid numbers  
   
+#### Bad
+
+```js  
 for (let i = 0; i < 525600; i += 1) {  
   runCron();  
-}  
-  
-// ->  
-  
+}
+```
+
+#### Good
+
+```js
 const minutesInYear = 525600;  
 for (let i = 0; i < minutesInYear; i += 1) {  
   runCron();  
 }
+```
 
 -------------
 
@@ -1073,15 +1083,17 @@ locations.forEach((l) => {
  // ... // ... // Wait, what is `l` for again?  dispatch(l);  
 });  
   
-// ->  
-  
+#### Good
+
+```js
 const locations = ['Austin', 'New York', 'San Francisco'];  
 locations.forEach((location) => {  
   doStuff();  
   doSomeOtherStuff();  
-  // ...  
- // ... // ...  dispatch(location);  
+	
+	dispatch(location);  
 });
+```
 
 -------------
   
@@ -2474,6 +2486,6 @@ const writeChangedDataToFs = getData(db);
 
 writeChangedDataToFs();
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTA2OTkyNDkyMywxODA2MDg5MDQzLDUyMD
+eyJoaXN0b3J5IjpbMTY0NTY3Nzg3MywxODA2MDg5MDQzLDUyMD
 EyMDQ4MCwxNTIxOTc4ODgzXX0=
 -->
