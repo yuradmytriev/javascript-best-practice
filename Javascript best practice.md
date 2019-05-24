@@ -1038,10 +1038,12 @@ const yearsMonthDay = moment.format('YYYY/MM/DD');
   
 ### Remove obvious data  
   
+#### Bad
+
+```  
 getUserData();  
-  
-// ->  
-  
+
+#### Good  
 getUser();  
   
 -------------
@@ -2219,7 +2221,7 @@ if (foo) {
 
 ---------------------------------------
 
-36. Add spaces inside curly braces. eslint: object-curly-spacing
+### Add spaces inside curly braces. eslint: object-curly-spacing
 
 // bad
 const foo = {clark: 'kent'};
@@ -2229,8 +2231,7 @@ const foo = { clark: 'kent' };
 
 ---------------------------------------
 
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-37. Do not use trailing or leading underscores. eslint: no-underscore-dangle
+### Do not use trailing or leading underscores. eslint: no-underscore-dangle
 
 Why? JavaScript does not have the concept of privacy in terms of properties or methods. Although a leading underscore is a common convention to mean “private”, in fact, these properties are fully public, and as such, are part of your public API contract. This convention might lead developers to wrongly think that a change won’t count as breaking, or that tests aren’t needed. tl;dr: if you want something to be “private”, it must not be observably present.
 
@@ -2249,9 +2250,8 @@ firstNames.set(this, 'Panda');
 
 ---------------------------------------
 
-38. A base filename should exactly match the name of its default export.
+### A base filename should exactly match the name of its default export.
 
-39. 
 var siteUrl = "http://refactoringjs.com";
 $('.my-button').on('click', function(){
  window.location = siteUrl;
@@ -2273,7 +2273,7 @@ $('.other-button').on('click', visitSite);
 
 ----------------------------------------------------
 
-// Function callers and callees should be close
+### Function callers and callees should be close
 
 Bad:
 
@@ -2369,7 +2369,7 @@ function getIngredientsFromFile() {
 
 -------------
 
-// User input should be limited
+### User input should be limited
 
 /* 
 Users can potentially input an unlimited amount of data to send to you. It's important to set limits 
@@ -2474,6 +2474,6 @@ const writeChangedDataToFs = getData(db);
 
 writeChangedDataToFs();
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTcyMjUwNTIyNywxODA2MDg5MDQzLDUyMD
+eyJoaXN0b3J5IjpbMTA2OTkyNDkyMywxODA2MDg5MDQzLDUyMD
 EyMDQ4MCwxNTIxOTc4ODgzXX0=
 -->
