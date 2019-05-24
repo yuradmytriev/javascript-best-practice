@@ -629,7 +629,7 @@ function bar () {
 
 ```js
 if (expensiveOperation()) {
-    console.log('Result: ' + expensiveOperation());
+  console.log('Result: ' + expensiveOperation());
 }
 ```
 
@@ -638,7 +638,7 @@ if (expensiveOperation()) {
 ```js
 const result = expensiveOperation();
 if (result) {
-    console.log('Result: ' + result);
+  console.log('Result: ' + result);
 }
 ```
 
@@ -665,10 +665,11 @@ class ApplicationView extends View {}
 
 ```js
 const API_ORIGIN = 'http://example.com';
+const API_ORIGIN = 'http://example.com';
 
-function fetchProfile (userID) {
-    const endpoint = `${API_ORIGIN}/user/${userID}`;
-    return $.ajax(endpoint);
+function fetchProfile(userID) {
+  const endpoint = `${API_ORIGIN}/user/${userID}`;
+  return $.ajax(endpoint);
 }
 ```
 
@@ -783,9 +784,9 @@ $('.foo').filter('ul').find('li').text((i) => `Item ${i + 1}`);
 
 ```js
 $('.foo')
-    .filter('ul')
-    .find('li')
-    .text((i) => `Item ${i + 1}`);
+  .filter('ul')
+  .find('li')
+  .text((i) => `Item ${i + 1}`);
 ```
 
 ---------------------------
@@ -806,12 +807,12 @@ Promise.resolve().then(() => {
 
 ```js
 Promise.resolve()
-    .then(() => {
-        const data = getUserInput();
-        return asyncFunction1(data);
-    })
-    .then(() => asyncFunction2())
-    .catch((err) => displayError(err));
+  .then(() => {
+    const data = getUserInput();
+    return asyncFunction1(data);
+  })
+  .then(() => asyncFunction2())
+  .catch((err) => displayError(err));
 ```
     
 -----------
@@ -2484,6 +2485,6 @@ const writeChangedDataToFs = getData(db);
 
 writeChangedDataToFs();
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5NjAxOTYzMTUsMTgwNjA4OTA0Myw1Mj
-AxMjA0ODAsMTUyMTk3ODg4M119
+eyJoaXN0b3J5IjpbMjA2NzAwMzI5NiwxODA2MDg5MDQzLDUyMD
+EyMDQ4MCwxNTIxOTc4ODgzXX0=
 -->
