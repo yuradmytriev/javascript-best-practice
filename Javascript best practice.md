@@ -2664,17 +2664,19 @@ tableColumns.length > 0 -> tableColumns.length
 #### Good
 
 ```js
-        let node;
-        if (this.props.columnTreeNode) {
-            node = this.props.dataNode;
-        } else if (this.props.treeNode) {
-            node = this.props.treeNode;
-        }
+let node;
 
-        const isCellSelected = node && node.state && node.state.selected;
+if (this.props.columnTreeNode) {
+  node = this.props.dataNode;
+} else if (this.props.treeNode) {
+  node = this.props.treeNode;
+}
+
+const isCellSelected = node && node.state && node.state.selected;
+
 ```
 
-        // bad
+ №bad
         const isCellSelected =
             (this.props.treeNode && this.props.treeNode.state && this.props.treeNode.state.selected) ||
             (this.props.dataNode && this.props.dataNode.state && this.props.dataNode.state.selected);
@@ -2721,7 +2723,7 @@ const writeChangedDataToFs = getData(db);
 
 writeChangedDataToFs();
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTY2Nzg4NjI0NywtODc0MTgwODIsMTc2OD
+eyJoaXN0b3J5IjpbLTQ2MTYxNTc3NSwtODc0MTgwODIsMTc2OD
 k4MzQyNywtMTA2OTAwNzQ1MywxODA2MDg5MDQzLDUyMDEyMDQ4
 MCwxNTIxOTc4ODgzXX0=
 -->
