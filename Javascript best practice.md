@@ -2067,7 +2067,7 @@ function makeRegexParser(regex) {
 var parseSsn = makeRegexParser(/^\d{3}-\d{2}-\d{4}$/);
 var parsePhone = makeRegexParser(/^\(\d{3}\)\d{3}-\d{4}$/);
 
-//instead
+/#### Good
 
 var parseSsn = /^\d{3}-\d{2}-\d{4}$/.exec;
 var parsePhone = /^\(\d{3}\)\d{3}-\d{4}$/.exec; 
@@ -2619,7 +2619,7 @@ const writeChangedDataToFs = getData(db);
 
 writeChangedDataToFs();
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTg3NDE4MDgyLDE3Njg5ODM0MjcsLTEwNj
-kwMDc0NTMsMTgwNjA4OTA0Myw1MjAxMjA0ODAsMTUyMTk3ODg4
-M119
+eyJoaXN0b3J5IjpbLTY2ODEyOTExMiwtODc0MTgwODIsMTc2OD
+k4MzQyNywtMTA2OTAwNzQ1MywxODA2MDg5MDQzLDUyMDEyMDQ4
+MCwxNTIxOTc4ODgzXX0=
 -->
