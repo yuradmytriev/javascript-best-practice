@@ -2006,32 +2006,38 @@ function foo(required = throwException()) { ··· }
 ### Enforcing a maximum arity (variant 1 of 2)
 
 ```js
-  function f(x, y, ...empty) { // max arity: 2
-      if (empty.length > 0) {
-          throw new Error();
-      }
+function f(x, y, ...empty) { // max arity: 2
+  if (empty.length > 0) {
+    throw new Error();
   }
+}
 ```
 
 --------------------------------------------------------------
 
 ### Normalize variable
 
+#### Bad
+
+```js
 const hasEitherClass = (element, classNamel, className2) =>
    element.className == classNamel || element.className == className2;
+```
 
+#### Good
 
-->
-
+```js
 const hasEitherClass = (element, classNamel, className2) => {
-    const currentClassName = element.className;
-    return currentClassName == classNamel || currentClassName == className2;
-};
+  const currentClassName = element.className;
+  return currentClassName == classNamel || currentClassName == className2;
+}:
+```
 
 --------------------------------------------------------------
 
 ### refactoring
 
+#### Bad
   const getItem = () => {
     const item = myStorage.getItem('customKey');
     console.log(item);
@@ -2049,14 +2055,6 @@ const hasEitherClass = (element, classNamel, className2) => {
   }
 
 --------------------------------------------------------------  
-
-### Для parseInt всегда определять систему исчесления
-
---------------------------------------------------------------
-
-### Для функции конструктора используются заглавные буквы
-
---------------------------------------------------------------
 
 ### cache:
 
@@ -2624,7 +2622,7 @@ const writeChangedDataToFs = getData(db);
 
 writeChangedDataToFs();
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1ODU5NjExNjcsMTc2ODk4MzQyNywtMT
-A2OTAwNzQ1MywxODA2MDg5MDQzLDUyMDEyMDQ4MCwxNTIxOTc4
-ODgzXX0=
+eyJoaXN0b3J5IjpbMjEzMzk5MzA0MywxNzY4OTgzNDI3LC0xMD
+Y5MDA3NDUzLDE4MDYwODkwNDMsNTIwMTIwNDgwLDE1MjE5Nzg4
+ODNdfQ==
 -->
