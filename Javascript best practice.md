@@ -37,11 +37,11 @@ Array.from(arguments).map((func) => {
 
 ```js
 const func = () => {
-	if (this.state.data) {
-		return this.state.data;
-	} else {
-		return 'Fetching Data';
-	}
+  if (this.state.data) {
+    return this.state.data;
+  } else {
+    return 'Fetching Data';
+  }
 };
 ```
 
@@ -49,14 +49,13 @@ const func = () => {
 
 ```js
 const func = () => {
-	if (this.state.data) {
-		return this.state.data;
-	}
+  if (this.state.data) {
+    return this.state.data;
+  }
 
-	return 'Fetching Data';
+  return 'Fetching Data';
 };
 ```
-  
 
 #### Better
 
