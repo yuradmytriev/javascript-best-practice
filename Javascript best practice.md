@@ -1,3 +1,19 @@
+### Functions should be named for what they do, not how they do it.
+  
+
+#### Bad
+
+```js
+const loadConfigFromServer = () => { ... };
+```
+
+#### Good
+
+```js
+const loadConfig = () => {	... };
+```
+
+----------------------------
 
 ### Use object method shorthand.
 
