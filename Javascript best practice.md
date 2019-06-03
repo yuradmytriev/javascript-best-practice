@@ -2646,6 +2646,33 @@ columnTreeNode.userType === 'subTotal' || rowTreeNode.userType === 'subTotal'
 (columnTreeNode.userType || rowTreeNode.userType) === 'subTotal';
 ```
 
+------------------------------
+
+
+### Variables should be declared as close to their usage as possible. 
+
+#### Bad
+
+```js
+const someString = 'string';
+
+// ... a lot of other code lines
+
+const mutateString = () => {
+	// some someString mutation
+};
+```
+
+#### Good
+
+```js
+const someString = 'string';
+
+const mutateString = () => {
+	// some someString mutation
+};
+```
+
 <!--stackedit_data:
 eyJoaXN0b3J5IjpbMTg3MDY4NTUxMSwtMTUyNjI4MDc2OCwtOD
 c0MTgwODIsMTc2ODk4MzQyNywtMTA2OTAwNzQ1MywxODA2MDg5
