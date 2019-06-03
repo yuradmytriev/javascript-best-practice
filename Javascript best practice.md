@@ -2673,6 +2673,18 @@ const mutateString = () => {
 };
 ```
 
+--------------------------
+
+### Comments
+
+> The only truly good comment is the comment you found a way not to write.
+
+#### Don’t Use a Comment When You Can Use a well named Function or a Variable
+
+Any comment which forces you to look into another module for meaning has failed miserably in communicating and is not worth it at all.
+
+> Don’t comment bad code, Rewrite it.  
+
 <!--stackedit_data:
 eyJoaXN0b3J5IjpbMTg3MDY4NTUxMSwtMTUyNjI4MDc2OCwtOD
 c0MTgwODIsMTc2ODk4MzQyNywtMTA2OTAwNzQ1MywxODA2MDg5
