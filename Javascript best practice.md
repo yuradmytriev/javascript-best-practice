@@ -2685,6 +2685,33 @@ Any comment which forces you to look into another module for meaning has failed 
 
 > Don’t comment bad code, Rewrite it.  
 
+----------------------------------
+
+### Do not prepend Error: to error messages, or any similar label.
+
+#### Bad
+
+```js
+const err = new Error('ValidationError: Result is not valid');
+
+console.error(err.toString());
+
+// => Error: ValidationError: Result is not valid
+```
+  
+
+#### Good
+
+```js
+const err = new Error('Result is not valid');
+
+err.name = 'ValidationError';
+
+console.error(err.toString());
+
+// => ValidationError: Result is not valid
+```
+
 <!--stackedit_data:
 eyJoaXN0b3J5IjpbMTg3MDY4NTUxMSwtMTUyNjI4MDc2OCwtOD
 c0MTgwODIsMTc2ODk4MzQyNywtMTA2OTAwNzQ1MywxODA2MDg5
