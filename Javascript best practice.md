@@ -15,6 +15,57 @@ const loadConfig = () => {	... };
 
 ----------------------------
 
+#### Good
+
+```js
+Array.from(arguments, func => {
+  this[func]();
+});
+```
+
+#### Bad
+
+```js
+Array.from(arguments).map((func) => {
+  this[func]();
+});
+```
+
+--------------------------------------------------
+
+#### Bad
+
+```js
+const func = () => {
+	if (this.state.data) {
+		return this.state.data;
+	} else {
+		return 'Fetching Data';
+	}
+};
+```
+
+#### Good
+
+```js
+const func = () => {
+	if (this.state.data) {
+		return this.state.data;
+	}
+
+	return 'Fetching Data';
+};
+```
+  
+
+#### Better
+
+```js
+const func = () => (this.state.data || 'Fetching Data');
+```
+
+-------------------------------------
+
 ### Use object method shorthand.
 
 #### Bad
