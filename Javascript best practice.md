@@ -2778,6 +2778,23 @@ console.error(err.toString());
 // => ValidationError: Result is not valid
 ```
 
+------------------------------
+
+### Create new object
+
+#### Bad
+
+```js
+Register.create({name, password})
+``` 
+
+#### Good
+
+```js
+const user = new User(name, password);
+Register.create(user);
+```
+
 <!--stackedit_data:
 eyJoaXN0b3J5IjpbMTg3MDY4NTUxMSwtMTUyNjI4MDc2OCwtOD
 c0MTgwODIsMTc2ODk4MzQyNywtMTA2OTAwNzQ1MywxODA2MDg5
